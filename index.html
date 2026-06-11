@@ -102,6 +102,15 @@ nav {
   overflow: hidden; box-shadow: var(--shadow-lg);
 }
 .video-card video { width: 100%; display: block; max-height: 280px; }
+.video-ratio {
+  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+  background: #000;
+}
+.video-ratio iframe,
+.video-ratio video {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
 .video-caption {
   padding: 14px 18px; background: rgba(255,255,255,.06);
   border-top: 1px solid rgba(255,255,255,.08);
@@ -360,30 +369,41 @@ footer {
 
   <div class="video-grid">
     <div class="video-card">
-      <video controls preload="metadata"
-        src="각종자료/1최찬영선교사자료/최찬영 영상 자료2/GMAN     선교방송  Choi Chan Young1955.mp4">
-        브라우저가 동영상을 지원하지 않습니다.
-      </video>
+      <div class="video-ratio">
+        <video controls preload="metadata"
+          src="각종자료/1최찬영선교사자료/최찬영 영상 자료2/GMAN     선교방송  Choi Chan Young1955.mp4">
+          브라우저가 동영상을 지원하지 않습니다.
+        </video>
+      </div>
       <div class="video-caption">
         <div class="vtitle">GMAN 선교방송 — 최찬영 선교사 1955</div>
         <div class="vdesc">한국교회 최초 해외선교 파송 기록 영상</div>
       </div>
     </div>
     <div class="video-card">
-      <video controls preload="metadata"
-        src="각종자료/1최찬영선교사자료/최찬영 영상 자료2/선교사 열전 최찬영 선교사 1.mp4">
-        브라우저가 동영상을 지원하지 않습니다.
-      </video>
+      <div class="video-ratio">
+        <iframe src="https://www.youtube.com/embed/LlKWYcNjVOY?si=6gXfosq6SDTF8a4H"
+          title="선교사 열전 — 최찬영 선교사 1편"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
       <div class="video-caption">
         <div class="vtitle">선교사 열전 — 최찬영 선교사 1편</div>
         <div class="vdesc">생애와 태국·성서공회 사역 기록</div>
       </div>
     </div>
-  </div>
-
-  <div class="avi-pill">
-    <span>📽 추가 영상 (AVI)</span>
-    <a href="한국 해방후 1호 선교사 최찬영선교사님 파송장면.avi">파송장면 열기 ↗</a>
+    <div class="video-card">
+      <div class="video-ratio">
+        <iframe src="https://www.youtube.com/embed/BLUJwfbVQ9g?si=vAETsdAz2lEcBv6N"
+          title="파송장면 — 한국 해방 후 1호 선교사 최찬영 선교사님"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <div class="vtitle">파송장면 — 한국 해방 후 1호 선교사</div>
+        <div class="vdesc">최찬영 선교사님 파송 귀중 영상 (1955)</div>
+      </div>
+    </div>
   </div>
 </section>
 
