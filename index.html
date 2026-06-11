@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>태국 한인 선교 70주년 — 1956·2026</title>
+<style>
+/* ── Apple Design System ── */
+:root {
+  --bg:          #f5f5f7;
+  --bg-card:     #ffffff;
+  --bg-dark:     #1d1d1f;
+  --bg-dark2:    #2d2d2f;
+  --text-primary:   #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary:  #86868b;
+  --text-white:     #f5f5f7;
+  --blue:     #0071e3;
+  --blue-dark:#005bbf;
+  --gold:     #b5893a;
+  --gold-lt:  #d4a853;
+  --separator: rgba(0,0,0,0.1);
+  --radius-sm:  10px;
+  --radius-md:  18px;
+  --radius-lg:  28px;
+  --shadow-sm:  0 2px 12px rgba(0,0,0,.08);
+  --shadow-md:  0 8px 32px rgba(0,0,0,.12);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,.18);
+  --font: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Apple SD Gothic Neo',
+          'Malgun Gothic', '맑은 고딕', sans-serif;
+  --font-text: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Apple SD Gothic Neo',
+               'Malgun Gothic', '맑은 고딕', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-text); background: var(--bg);
+       color: var(--text-primary); -webkit-font-smoothing: antialiased; }
+
+/* ── 내비게이션 ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(245,245,247,.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--separator);
+  display: flex; align-items: center; justify-content: center;
+  height: 52px;
+}
+.nav-inner {
+  width: 100%; max-width: 1080px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+}
+.nav-logo {
+  font-family: var(--font); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); white-space: nowrap; letter-spacing: -.3px;
+}
+.nav-links { display: flex; gap: 4px; }
+.nav-links a {
+  color: var(--text-secondary); text-decoration: none;
+  font-size: .84rem; font-family: var(--font-text);
+  padding: 6px 12px; border-radius: 8px; transition: all .2s;
+}
+.nav-links a:hover { background: rgba(0,0,0,.06); color: var(--text-primary); }
+
+/* ── 히어로 ── */
+#hero {
+  background: var(--bg-dark);
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,113,227,.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: .84rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 16px;
+}
+#hero h1 {
+  font-family: var(--font);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700; letter-spacing: -.5px; line-height: 1.1;
+  color: #f5f5f7; margin-bottom: 12px;
+}
+.hero-sub {
+  font-size: clamp(.95rem, 2vw, 1.15rem);
+  color: rgba(245,245,247,.6); margin-bottom: 52px;
+  font-family: var(--font-text);
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; max-width: 1000px; margin: 0 auto 32px;
+}
+.video-card {
+  background: #000; border-radius: var(--radius-md);
+  overflow: hidden; box-shadow: var(--shadow-lg);
+}
+.video-card video { width: 100%; display: block; max-height: 280px; }
+.video-caption {
+  padding: 14px 18px; background: rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.video-caption .vtitle {
+  color: #f5f5f7; font-size: .9rem; font-weight: 600; margin-bottom: 4px;
+}
+.video-caption .vdesc { color: rgba(255,255,255,.5); font-size: .8rem; }
+.avi-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 100px; padding: 10px 20px;
+  color: rgba(255,255,255,.65); font-size: .85rem;
+}
+.avi-pill a { color: var(--gold-lt); text-decoration: none; font-weight: 600; }
+
+/* ── 섹션 래퍼 ── */
+.section-wrap { max-width: 1080px; margin: 0 auto; padding: 80px 24px; }
+.section-wrap.narrow { max-width: 760px; }
+
+.section-eyebrow {
+  font-size: .78rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--font);
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-weight: 700; letter-spacing: -.4px; line-height: 1.15;
+  color: var(--text-primary); margin-bottom: 16px;
+}
+.section-body {
+  font-family: var(--font-text); font-size: 1rem;
+  color: var(--text-secondary); line-height: 1.75; max-width: 680px;
+}
+
+/* ── 통계 카드 ── */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px; margin-top: 40px;
+}
+.stat-card {
+  background: var(--bg-card); border-radius: var(--radius-md);
+  padding: 28px 24px; box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.stat-num {
+  font-family: var(--font); font-size: 2.8rem; font-weight: 700;
+  letter-spacing: -1px; color: var(--text-primary); line-height: 1;
+}
+.stat-label {
+  font-size: .82rem; color: var(--text-secondary);
+  margin-top: 6px; line-height: 1.4;
+}
+
+/* ── 선교사 탭 ── */
+.tab-bar {
+  display: flex; gap: 6px; margin-bottom: 0;
+  border-bottom: 1px solid var(--separator); padding-bottom: 0;
+}
+.tab-btn {
+  padding: 10px 22px; border: none;
+  background: transparent; font-family: var(--font-text);
+  font-size: .9rem; font-weight: 500; color: var(--text-tertiary);
+  cursor: pointer; border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: all .2s;
+}
+.tab-btn:hover { color: var(--text-primary); }
+.tab-btn.active {
+  color: var(--blue); border-bottom-color: var(--blue);
+  font-weight: 600;
+}
+.tab-pane { display: none; padding: 40px 0; }
+.tab-pane.active { display: block; }
+
+/* ── 선교사 프로필 ── */
+.mis-layout {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 40px; align-items: start; margin-bottom: 40px;
+}
+@media (max-width: 640px) {
+  .mis-layout { grid-template-columns: 1fr; }
+}
+.mis-photo {
+  width: 200px; height: 260px; object-fit: cover;
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+  display: block;
+}
+.mis-photo-placeholder {
+  width: 200px; height: 260px;
+  border-radius: var(--radius-md); background: #e5e5ea;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; color: #aeaeb2;
+}
+.mis-name {
+  font-family: var(--font); font-size: 2rem; font-weight: 700;
+  letter-spacing: -.4px; color: var(--text-primary); margin-bottom: 8px;
+}
+.mis-badge {
+  display: inline-block; background: rgba(0,113,227,.1);
+  color: var(--blue); font-size: .78rem; font-weight: 600;
+  padding: 4px 12px; border-radius: 100px; margin-bottom: 20px;
+}
+.fact-list { display: flex; flex-direction: column; gap: 0; }
+.fact-row {
+  display: grid; grid-template-columns: 90px 1fr;
+  padding: 10px 0; border-bottom: 1px solid var(--separator);
+  font-size: .88rem;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-key { color: var(--text-tertiary); font-weight: 500; }
+.fact-val { color: var(--text-primary); }
+
+/* ── 본문 내용 ── */
+.mis-detail { font-size: .97rem; line-height: 1.85; color: var(--text-secondary); }
+.mis-detail h4 {
+  font-family: var(--font); font-size: 1.1rem; font-weight: 600;
+  color: var(--text-primary); margin: 32px 0 10px;
+}
+.mis-detail p { margin-bottom: 14px; }
+.mis-detail blockquote {
+  background: var(--bg); border-left: 3px solid var(--blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 16px 20px; margin: 20px 0;
+  color: var(--text-primary); font-size: .93rem; font-style: normal;
+  box-shadow: var(--shadow-sm);
+}
+.mis-detail blockquote cite {
+  display: block; margin-top: 8px;
+  font-size: .8rem; color: var(--text-tertiary); font-style: italic;
+}
+
+/* ── 구분선 섹션 ── */
+.divider-section {
+  background: var(--bg-dark);
+  padding: 80px 24px;
+}
+
+/* ── 타임라인 ── */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+  width: 2px; background: linear-gradient(to bottom, var(--blue), #5ac8fa);
+  border-radius: 2px;
+}
+.tl-item { position: relative; margin-bottom: 32px; }
+.tl-dot {
+  position: absolute; left: -29px; top: 4px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--blue); border: 2px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--blue);
+}
+.tl-year {
+  font-family: var(--font); font-size: .8rem; font-weight: 700;
+  color: var(--blue); letter-spacing: .03em; margin-bottom: 4px;
+}
+.tl-text { font-size: .92rem; color: var(--text-secondary); line-height: 1.65; }
+.tl-text strong { color: var(--text-primary); font-weight: 600; }
+
+/* ── 파송 통계 (다크) ── */
+.era-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px; margin-top: 36px;
+}
+.era-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-md); padding: 24px 20px; text-align: center;
+}
+.era-num {
+  font-family: var(--font); font-size: 2.4rem; font-weight: 700;
+  color: #f5f5f7; line-height: 1;
+}
+.era-label { font-size: .78rem; color: rgba(255,255,255,.5); margin-top: 6px; }
+.era-names { font-size: .75rem; color: rgba(255,255,255,.35); margin-top: 4px; }
+
+/* ── 사진 갤러리 ── */
+.gallery-section-title {
+  font-family: var(--font); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); margin: 40px 0 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.gallery-section-title::before {
+  content: ''; display: block; width: 4px; height: 20px;
+  background: var(--blue); border-radius: 2px; flex-shrink: 0;
+}
+.photo-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.photo-grid a { display: block; border-radius: var(--radius-sm); overflow: hidden; }
+.photo-grid img {
+  width: 100%; height: 130px; object-fit: cover; display: block;
+  transition: transform .3s; background: #e5e5ea;
+}
+.photo-grid a:hover img { transform: scale(1.05); }
+
+/* ── 라이트박스 ── */
+#lightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.92);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  z-index: 999; align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 85vh; border-radius: var(--radius-md); }
+#lb-close {
+  position: absolute; top: 20px; right: 24px;
+  background: rgba(255,255,255,.15); border: none;
+  border-radius: 50%; width: 40px; height: 40px;
+  color: #fff; font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+#lb-close:hover { background: rgba(255,255,255,.25); }
+
+/* ── 푸터 ── */
+footer {
+  background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,.08);
+  padding: 40px 24px; text-align: center;
+}
+.footer-title { color: rgba(255,255,255,.8); font-size: .95rem; font-weight: 500; }
+.footer-sub { color: rgba(255,255,255,.3); font-size: .8rem; margin-top: 8px; line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .nav-logo { font-size: .85rem; }
+  .nav-links { display: none; }
+  .mis-layout { grid-template-columns: 1fr; }
+  .mis-photo, .mis-photo-placeholder { width: 100%; height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 내비게이션 -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">태국 한인선교 70주년</span>
+    <div class="nav-links">
+      <a href="#hero">영상</a>
+      <a href="#intro">개요</a>
+      <a href="#missionaries">선교사</a>
+      <a href="#timeline-sec">연대기</a>
+      <a href="#stats">통계</a>
+      <a href="#gallery">사진</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ 1. 히어로 ══ -->
+<section id="hero">
+  <p class="hero-eyebrow">1956 · 2026</p>
+  <h1>태국 한인 선교<br>70주년 기념</h1>
+  <p class="hero-sub">해방 후 첫 선교사들의 헌신 — 최찬영 · 김순일 · 송예근</p>
+
+  <div class="video-grid">
+    <div class="video-card">
+      <video controls preload="metadata"
+        src="각종자료/1최찬영선교사자료/최찬영 영상 자료2/GMAN     선교방송  Choi Chan Young1955.mp4">
+        브라우저가 동영상을 지원하지 않습니다.
+      </video>
+      <div class="video-caption">
+        <div class="vtitle">GMAN 선교방송 — 최찬영 선교사 1955</div>
+        <div class="vdesc">한국교회 최초 해외선교 파송 기록 영상</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="metadata"
+        src="각종자료/1최찬영선교사자료/최찬영 영상 자료2/선교사 열전 최찬영 선교사 1.mp4">
+        브라우저가 동영상을 지원하지 않습니다.
+      </video>
+      <div class="video-caption">
+        <div class="vtitle">선교사 열전 — 최찬영 선교사 1편</div>
+        <div class="vdesc">생애와 태국·성서공회 사역 기록</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="avi-pill">
+    <span>📽 추가 영상 (AVI)</span>
+    <a href="한국 해방후 1호 선교사 최찬영선교사님 파송장면.avi">파송장면 열기 ↗</a>
+  </div>
+</section>
+
+<!-- ══ 2. 개요 ══ -->
+<section id="intro">
+  <div class="section-wrap">
+    <p class="section-eyebrow">History</p>
+    <h2 class="section-title">태국 한인 선교의 시작</h2>
+    <p class="section-body">
+      한국교회의 태국 선교는 <strong>1956년</strong>을 기점으로 본격 시작되었습니다.
+      6.25 전쟁의 상처가 아물기도 전에, 대한민국 최초의 해외 선교사들이 태국으로 파송됐습니다.
+      당시 태국 GNP는 한국의 세 배, 방콕에는 한국 대사관도 없었습니다.
+      그 불모지에서 시작된 씨앗이 70년이 지난 지금 380여 가정의 선교사로 열매 맺었습니다.
+    </p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">1956</div>
+        <div class="stat-label">최초 선교사<br>태국 입국 연도</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">초기 파송<br>선교사 가정</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">380<span style="font-size:1.4rem">+</span></div>
+        <div class="stat-label">누적 파송<br>한인 선교사 가정</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">70</div>
+        <div class="stat-label">2026년 기준<br>선교 연수</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3. 선교사 프로필 ══ -->
+<section id="missionaries" style="background:var(--bg-card); border-top:1px solid var(--separator); border-bottom:1px solid var(--separator);">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Missionaries</p>
+    <h2 class="section-title">초기 세 선교사</h2>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showTab('choi',this)">최찬영 선교사</button>
+      <button class="tab-btn" onclick="showTab('kim',this)">김순일 선교사</button>
+      <button class="tab-btn" onclick="showTab('song',this)">송예근 선교사</button>
+    </div>
+
+    <!-- ── 최찬영 ── -->
+    <div id="tab-choi" class="tab-pane active">
+      <div class="mis-layout">
+        <img class="mis-photo"
+          src="각종자료/1최찬영선교사자료/최찬영.jpg"
+          alt="최찬영 선교사"
+          onerror="this.outerHTML='<div class=mis-photo-placeholder>✝</div>'">
+        <div>
+          <h3 class="mis-name">최찬영 선교사</h3>
+          <span class="mis-badge">대한민국 여권 최초 해외 선교사 · 아시아인 최초 세계성서공회 아·태 총무</span>
+          <div class="fact-list">
+            <div class="fact-row"><span class="fact-key">생년</span><span class="fact-val">1927. 9. 16 (중국 출생)</span></div>
+            <div class="fact-row"><span class="fact-key">파송일</span><span class="fact-val">1955. 4. 24 — 영락교회 주일저녁예배</span></div>
+            <div class="fact-row"><span class="fact-key">입국일</span><span class="fact-val">1956. 6. 4 (김포→홍콩→방콕)</span></div>
+            <div class="fact-row"><span class="fact-key">사역기간</span><span class="fact-val">1956–1970 태국 / 1970–1992 아시아성서공회</span></div>
+            <div class="fact-row"><span class="fact-key">주 사역지</span><span class="fact-val">방콕, 동남아시아, 중국, 필리핀</span></div>
+            <div class="fact-row"><span class="fact-key">파송교회</span><span class="fact-val">영락교회 (한경직 목사)</span></div>
+            <div class="fact-row"><span class="fact-key">사모</span><span class="fact-val">김광명 선교사 (방사선과 의사)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="mis-detail">
+        <h4>소명과 파송</h4>
+        <p>최찬영 선교사는 한국전쟁 중 "앞으로 사는 건 하나님이 덤으로 주는 것, 무엇이든 순종하겠다"고 고백했습니다. 1954년 신혼집으로 찾아온 안광국 목사의 부름에 30시간 기도 끝에 선교사로 헌신하기로 결단했습니다.</p>
+        <p>파송 예배 소식에 미국 북장로교가 영화제작자를 파견해 다큐멘터리 <em>「This High Calling」</em>을 제작했습니다. 한국 정부도 해외 선교사 여권 발급이 처음이어서 여권 발급에 꼬박 1년이 걸렸습니다.</p>
+        <h4>태국 사역 (1956–1962)</h4>
+        <blockquote>
+          "방콕 한 중국인 교회 3층 종탑 건물 제일 윗방에 짐을 풀면서 한국 첫 선교사 가정의 태국 삶이 시작되었다."
+        </blockquote>
+        <p>그는 태국기독교총회(CCT) 소속 '형제적 관계의 선교사(Fraternal Missionary)'로 방콕병원 원목, 제2교회 담임목사, 신학교 교수로 섬겼습니다. 태국어를 1년 공부한 뒤 태국어로 설교를 시작했습니다.</p>
+        <h4>성서공회 사역 (1962–1992)</h4>
+        <p>1962년 동양인 최초 태국·라오스 성서공회 총무, 1978년 아시아인 최초 아시아·태평양지역 성서공회 총무로 취임, 30년간 성경 번역·인쇄·반포에 헌신했습니다.</p>
+        <p><strong>1987년 중국 남경 애덕인쇄소(세계 최대 규모 성경인쇄공장) 완공</strong>은 그의 최대 업적입니다. 40여 차례 중국을 방문하며 이루어낸 기적이었습니다.</p>
+        <h4>불교 사찰에 성경을 전하다</h4>
+        <blockquote>
+          "금색 쟁반에 금색 포장지로 싼 성경을 불교 종정께 드렸습니다. 몇 달 후 그 절에서 편지가 왔어요. 100명 넘는 승려들이 읽으려 하니 더 보내달라는 내용이었습니다."
+          <cite>— 최찬영 선교사 인터뷰</cite>
+        </blockquote>
+        <p>"선교란 현지인들을 섬기기 위해 가는 것이지, 관리하기 위해 가는 것이 아닙니다." 한국장로교 선교역사상 가장 오랜 기간(1956–1991) 활동한 선교사로 기록됩니다.</p>
+      </div>
+    </div>
+
+    <!-- ── 김순일 ── -->
+    <div id="tab-kim" class="tab-pane">
+      <div class="mis-layout">
+        <img class="mis-photo"
+          src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp"
+          alt="김순일 선교사"
+          onerror="this.outerHTML='<div class=mis-photo-placeholder>✝</div>'">
+        <div>
+          <h3 class="mis-name">김순일 선교사</h3>
+          <span class="mis-badge">한국 최초 선교학 박사 · 태국 치앙라이 노회장</span>
+          <div class="fact-list">
+            <div class="fact-row"><span class="fact-key">생년</span><span class="fact-val">1930년, 황해도</span></div>
+            <div class="fact-row"><span class="fact-key">파송일</span><span class="fact-val">1956. 9. 23 — 새문안교회 41회 총회 중</span></div>
+            <div class="fact-row"><span class="fact-key">입국일</span><span class="fact-val">1956년 11월 하순</span></div>
+            <div class="fact-row"><span class="fact-key">1차 사역</span><span class="fact-val">1956–1969년 (치앙라이·치앙마이)</span></div>
+            <div class="fact-row"><span class="fact-key">2차 사역</span><span class="fact-val">1970–1975년 (방콕 한인교회 개척)</span></div>
+            <div class="fact-row"><span class="fact-key">학위</span><span class="fact-val">프린스턴 M.Div.(1963) / 풀러 D.Miss.(1974)</span></div>
+            <div class="fact-row"><span class="fact-key">사모</span><span class="fact-val">김윤희 선교사</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="mis-detail">
+        <h4>소명과 파송</h4>
+        <p>1954년 대구 경북대에서 열린 국제기독청년봉사단 모임에서 태국인 신학생 마나의 선교 요청을 받고 소명을 받았습니다. 1956년 기독공보 공고를 보고 "주여 내가 여기 있사오니 나를 보내소서"라고 고백하며 응했습니다.</p>
+        <p>파송 예배에서 35년 중국 선교를 마친 이대영 선교사(당시 총회장)가 파송 서약을 진행했습니다. 이승만 대통령의 특별 배려로 2개월 만에 여권을 받았습니다.</p>
+        <h4>치앙라이 노회장 (1958–1961)</h4>
+        <blockquote>
+          "김선교사는 우리 태국사람과 같은 피부를 가졌고, 지난 5개월 동안 노회의 모든 교회를 방문해 주었습니다. 이런 선교사를 노회장으로 모신다는 것은 우리의 영광입니다."
+          <cite>— 태국 교인들의 추천사</cite>
+        </blockquote>
+        <p>언어 수업 후 6개월 만에 첫 설교, 부임 5개월 만에 만장일치 박수로 노회장 추대. 독일 마버거 선교사 7가정·미국 북장로교 선교사 6가정이 사역하는 가운데 나환자 교회 9곳을 포함한 38개 교회를 4년간 섬겼습니다.</p>
+        <h4>학문과 사역</h4>
+        <p>1963년 프린스턴 석사를 8개월 반 만에 완성하고, 1974년 풀러신학교에서 <strong>한국인 최초 선교학 박사(D.Miss.)</strong>를 취득했습니다. 연간 6만 명에게 복음을 전하고, 약 700명의 회심자를 세웠습니다.</p>
+        <p>1971년 1월 24일 <strong>방콕한인연합교회</strong>를 설립했고, 미국 헐리우드 태국인 교회도 개척했습니다.</p>
+        <h4>나환자와 동거동락</h4>
+        <p>치앙마이 멕케인 나환자 재활원에서 환자들과 함께 먹고 자며 메콩강의 물소 소리를 들으며 잠드는 삶을 살았습니다. 송예근 의료선교사를 초청해 함께 사역하게 한 것도 그의 역할이었습니다.</p>
+      </div>
+    </div>
+
+    <!-- ── 송예근 ── -->
+    <div id="tab-song" class="tab-pane">
+      <div class="mis-layout">
+        <img class="mis-photo"
+          src="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG"
+          alt="송예근 선교사"
+          onerror="this.outerHTML='<div class=mis-photo-placeholder>✝</div>'">
+        <div>
+          <h3 class="mis-name">송예근 선교사</h3>
+          <span class="mis-badge">한국 최초 전문인 선교사 · 박정희 대통령 주치의</span>
+          <div class="fact-list">
+            <div class="fact-row"><span class="fact-key">생년</span><span class="fact-val">1916. 2. 24</span></div>
+            <div class="fact-row"><span class="fact-key">파송일</span><span class="fact-val">1964년 12월</span></div>
+            <div class="fact-row"><span class="fact-key">사역기간</span><span class="fact-val">1964–1968년 (태국 치앙마이)</span></div>
+            <div class="fact-row"><span class="fact-key">사역지</span><span class="fact-val">치앙마이 멕케인 나환자 병원</span></div>
+            <div class="fact-row"><span class="fact-key">이후</span><span class="fact-val">에티오피아 한센병 병원 (4년)</span></div>
+            <div class="fact-row"><span class="fact-key">학력</span><span class="fact-val">경성제국대학 의학부 졸업</span></div>
+            <div class="fact-row"><span class="fact-key">사모</span><span class="fact-val">전정화 선교사</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="mis-detail">
+        <h4>한국 최초 전문인 선교사</h4>
+        <p>박정희 대통령 주치의였던 송예근 선교사는 1964년 대한예수교장로회에서 장로 직분을 받고 태국으로 파송받아, 치앙마이 멕케인(McKean) 한센씨병 전문 병원에서 4년간 의료선교를 펼쳤습니다. 1965년 태국 의사면허를 취득했습니다.</p>
+        <h4>환자를 사랑한 의사</h4>
+        <blockquote>
+          "다른 의사들은 환자들이 입을 가리고 말하게 했지만, 송 선교사는 직접 눈을 맞추며 대화했습니다. 그래서 병원의 세 의사 중 가장 인기가 높았습니다."
+        </blockquote>
+        <p>흰색 바지와 흰색 구두를 즐겨 신던 그는 환자·직원·인근 주민의 건강을 모두 돌봤습니다. 일과를 시작하고 마칠 때마다 직원들과 함께 체조를 하며 공동체를 세웠습니다.</p>
+        <h4>제자를 세운 사역</h4>
+        <p>환자 중 청년을 선발해 의료기술을 교육했습니다. 그의 제자 Azzan Thawat은 병리기사로 성장해 제14노회 서기를 8년간 역임하며, 생전에 "나는 한국 선교사 송예근 박사의 제자"라고 소개했습니다.</p>
+        <p>태국 청와대(육영수 여사)로부터 피아노를 기증받아 산띠탐 교회에 전달했으며, 박정희 대통령의 배려로 현대건설이 앰뷸런스를 기증하기도 했습니다.</p>
+        <h4>마지막 발자취</h4>
+        <p>1968년 태국 사역 후 에티오피아 한센병 병원에서 4년 추가 사역. 송예근 선교사는 1982년 10월, 전정화 선교사는 2001년 7월 소천하여 미국 네바다 라스베가스에 안장되었습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4. 연대기 타임라인 ══ -->
+<section id="timeline-sec">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Timeline</p>
+    <h2 class="section-title">주요 연대기</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1954</div>
+        <div class="tl-text"><strong>쿠알라룸푸르 EACC</strong>에서 태국에 아시아 선교사 파송 권유. 예장총회 40회 결의.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1955. 4. 24</div>
+        <div class="tl-text"><strong>최찬영·김광명 선교사 파송 예배</strong> — 영락교회. 미국 북장로교, 다큐멘터리 「This High Calling」 제작.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1956. 6. 4</div>
+        <div class="tl-text"><strong>최찬영 선교사 태국 입국</strong> — 대한민국 여권 최초 해외 선교사. 방콕 사역 시작.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1956. 9. 23</div>
+        <div class="tl-text"><strong>김순일·김윤희 선교사 파송</strong> — 새문안교회 41회 총회 중. 이대영 총회장 파송 서약.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1958</div>
+        <div class="tl-text">김순일 선교사, <strong>치앙라이 노회장 만장일치 추대</strong> — 부임 5개월 만. 38개 교회 순회.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1962</div>
+        <div class="tl-text">최찬영 선교사, 동양인 최초 <strong>태국·라오스 성서공회 총무</strong>.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1963. 6. 10</div>
+        <div class="tl-text">김순일 선교사, <strong>프린스턴 M.Div.</strong> — 8개월 반 만에 완성.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1964</div>
+        <div class="tl-text"><strong>송예근 선교사, 한국 최초 전문인(의료) 선교사 파송</strong>. 치앙마이 멕케인 병원 의료선교.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1971. 1. 24</div>
+        <div class="tl-text">김순일 선교사, <strong>방콕한인연합교회 설립</strong>.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1974</div>
+        <div class="tl-text">김순일 선교사, 풀러신학교에서 <strong>한국인 최초 선교학 박사(D.Miss.) 취득</strong>.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1978</div>
+        <div class="tl-text">최찬영 선교사, 아시아인 최초 <strong>아시아·태평양 성서공회 총무</strong> 취임.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1987. 7</div>
+        <div class="tl-text">최찬영 선교사, 중국 남경 <strong>애덕인쇄소 완공</strong> — 세계 최대 성경인쇄공장.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">1956–1991</div>
+        <div class="tl-text">최찬영 선교사, <strong>한국장로교 최장 기간 활동</strong>. 1990년대 선교사 폭발적 성장기 시작.</div>
+      </div>
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-year">2026</div>
+        <div class="tl-text"><strong>태국 한인 선교 70주년</strong> — 380여 가정으로 이어진 70년의 역사.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5. 파송 통계 ══ -->
+<div class="divider-section" id="stats">
+  <div class="section-wrap">
+    <p class="section-eyebrow" style="color:rgba(255,255,255,.5)">Statistics</p>
+    <h2 class="section-title" style="color:#f5f5f7">연대별 파송 현황</h2>
+    <p class="section-body" style="color:rgba(255,255,255,.5)">
+      1956년 2가정으로 시작해 70년 뒤 380여 가정으로 성장했습니다.
+    </p>
+    <div class="era-grid">
+      <div class="era-card"><div class="era-num">2</div><div class="era-label">1950년대</div><div class="era-names">최찬영 · 김순일</div></div>
+      <div class="era-card"><div class="era-num">1</div><div class="era-label">1960년대</div><div class="era-names">송예근</div></div>
+      <div class="era-card"><div class="era-num">4</div><div class="era-label">1970년대</div><div class="era-names">신홍식·김정웅 등</div></div>
+      <div class="era-card"><div class="era-num">31</div><div class="era-label">1980년대</div><div class="era-names">윤수길·양병화 등</div></div>
+      <div class="era-card"><div class="era-num">154</div><div class="era-label">1990년대</div><div class="era-names">폭발적 성장기</div></div>
+      <div class="era-card"><div class="era-num">172</div><div class="era-label">2000년대</div><div class="era-names">지속 성장기</div></div>
+    </div>
+    <p style="margin-top:28px; color:rgba(255,255,255,.3); font-size:.8rem; line-height:1.6;">
+      선교 시기 구분: 예장총회 선교사 시대(1956–1970) → KIM 선교사 시대(1970–1980) →
+      각양 선교단체 형성기(1980–1990) → 한국 선교사 폭발적 성장 시대(1990–현재)
+    </p>
+  </div>
+</div>
+
+<!-- ══ 6. 사진 기록 ══ -->
+<section id="gallery">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Gallery</p>
+    <h2 class="section-title">사진 기록</h2>
+
+    <p class="gallery-section-title">최찬영 선교사</p>
+    <div class="photo-grid">
+      <a href="각종자료/1최찬영선교사자료/최찬영파송에배.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영파송에배.jpg" alt="파송예배" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사부부.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사부부.jpg" alt="선교사 부부" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사입국1956.6..jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사입국1956.6..jpg" alt="1956 입국" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사동창부부.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사동창부부.jpg" alt="동창부부" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사 입국환영객.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사 입국환영객.jpg" alt="입국 환영" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영.jpg" alt="최찬영" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최1.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최1.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최2.jpg" alt="" loading="lazy"></a>
+    </div>
+
+    <p class="gallery-section-title">김순일 선교사</p>
+    <div class="photo-grid">
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp" alt="김순일 선교사" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/김순일선교사 선교관 (1).jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일선교사 선교관 (1).jpg" alt="선교관" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일2.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일3.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일3.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-1.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-1.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-2.jpg" alt="" loading="lazy"></a>
+    </div>
+
+    <p class="gallery-section-title">송예근 선교사</p>
+    <div class="photo-grid">
+      <a href="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG" alt="가족" loading="lazy"></a>
+      <a href="각종자료/송예근선교사/grace song.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/grace song.jpg" alt="Grace Song" loading="lazy"></a>
+      <a href="각종자료/송예근선교사/john song.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/john song.jpg" alt="John Song" loading="lazy"></a>
+      <a href="각종자료/송예근선교사/song family in chengmai thailand.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/song family in chengmai thailand.jpg" alt="치앙마이 가족" loading="lazy"></a>
+    </div>
+
+    <p class="gallery-section-title">참란 목사 자료 (1961–1969)</p>
+    <div class="photo-grid">
+      <a href="각종자료/참란목사의 자료/1961.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961.JPG" alt="1961" loading="lazy"></a>
+      <a href="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" alt="1961 노회" loading="lazy"></a>
+      <a href="각종자료/참란목사의 자료/1965년 4월호.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1965년 4월호.JPG" alt="1965" loading="lazy"></a>
+      <a href="각종자료/참란목사의 자료/1969.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1969.JPG" alt="1969" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 라이트박스 -->
+<div id="lightbox" onclick="closeLB()">
+  <button id="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- 푸터 -->
+<footer>
+  <div class="footer-title">태국 한인 선교 70주년 기념 — 1956 · 2026</div>
+  <div class="footer-sub">
+    최찬영 · 김순일 · 송예근 선교사의 헌신을 기억하며<br>
+    자료 출처: 미라클AI목회연구소 아카이브
+  </div>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+function openLB(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+</script>
+</body>
+</html>
