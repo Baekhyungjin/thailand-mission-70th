@@ -341,6 +341,32 @@ footer {
   color: rgba(255,255,255,.45); font-size: .82rem; letter-spacing: .02em;
 }
 
+/* ── 책자 섹션 ── */
+#book { background: var(--bg); }
+.book-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 24px;
+}
+.book-download {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue); color: #fff;
+  text-decoration: none; font-size: .9rem; font-weight: 600;
+  padding: 10px 22px; border-radius: 100px;
+  transition: background .2s;
+}
+.book-download:hover { background: var(--blue-dark); }
+.book-frame-wrap {
+  border-radius: var(--radius-md); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #fff;
+}
+.book-frame-wrap iframe {
+  width: 100%; height: 820px; border: none; display: block;
+}
+@media (max-width: 640px) {
+  .book-frame-wrap iframe { height: 560px; }
+}
+
 @media (max-width: 640px) {
   .nav-logo { font-size: .85rem; }
   .nav-links { display: none; }
@@ -362,6 +388,7 @@ footer {
       <a href="#timeline-sec">연대기</a>
       <a href="#stats">통계</a>
       <a href="#gallery">사진</a>
+      <a href="#book">책자</a>
     </div>
   </div>
 </nav>
@@ -387,7 +414,7 @@ footer {
     </div>
     <div class="video-card">
       <div class="video-ratio">
-        <iframe src="https://www.youtube.com/embed/LlKWYcNjVOY?si=6gXfosq6SDTF8a4H"
+        <iframe src="https://www.youtube.com/embed/BLUJwfbVQ9g?si=vAETsdAz2lEcBv6N"
           title="선교사 열전 — 최찬영 선교사 1편"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -399,7 +426,7 @@ footer {
     </div>
     <div class="video-card">
       <div class="video-ratio">
-        <iframe src="https://www.youtube.com/embed/BLUJwfbVQ9g?si=vAETsdAz2lEcBv6N"
+        <iframe src="https://www.youtube.com/embed/LlKWYcNjVOY?si=6gXfosq6SDTF8a4H"
           title="파송장면 — 한국 해방 후 1호 선교사 최찬영 선교사님"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -707,6 +734,31 @@ footer {
       <a href="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" alt="1961 노회" loading="lazy"></a>
       <a href="각종자료/참란목사의 자료/1965년 4월호.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1965년 4월호.JPG" alt="1965" loading="lazy"></a>
       <a href="각종자료/참란목사의 자료/1969.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1969.JPG" alt="1969" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7. 책자 ══ -->
+<section id="book">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Booklet</p>
+    <h2 class="section-title">70주년 기념대회 책자</h2>
+    <p class="section-body">한국교회 태국선교 70주년 기념대회 공식 책자입니다. 페이지를 넘기며 읽거나 전체를 다운로드할 수 있습니다.</p>
+
+    <div class="book-toolbar">
+      <span style="color:var(--text-secondary);font-size:.88rem;">3차 수정 · 최종 배포본</span>
+      <a class="book-download"
+         href="book.pdf" download="한국교회 태국선교 70주년 기념대회 책자.pdf">
+        ↓ PDF 다운로드
+      </a>
+    </div>
+
+    <div class="book-frame-wrap">
+      <iframe
+        src="https://docs.google.com/viewer?url=https://baekhyungjin.github.io/thailand-mission-70th/book.pdf&embedded=true"
+        title="70주년 기념대회 책자"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 </section>
