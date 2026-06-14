@@ -558,64 +558,55 @@ footer { background: var(--bg-dark); }
   flex-direction: column; justify-content: center; gap: 5px;
   background: none; border: none; cursor: pointer;
   padding: 8px; margin-right: -4px;
+  -webkit-tap-highlight-color: transparent;
 }
 .nav-hamburger span {
   display: block; width: 22px; height: 2px;
   background: var(--text-primary); border-radius: 2px;
-  transition: transform .28s, opacity .28s;
+  transition: transform .25s, opacity .25s;
 }
 .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── 모바일 드로어 ── */
-.nav-mobile-overlay {
-  display: none; position: fixed;
-  top: 52px; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,.4); z-index: 290;
-}
-.nav-mobile-overlay.open { display: block; }
-.nav-mobile-drawer {
-  position: fixed; top: 52px; right: -300px;
-  width: min(280px, 85vw);
-  height: calc(100% - 52px);
+/* ── 모바일 전체화면 메뉴 ── */
+#mnav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
   background: var(--bg-card);
-  z-index: 300;
-  transition: right .3s cubic-bezier(.4,0,.2,1);
-  overflow-y: auto; -webkit-overflow-scrolling: touch;
-  padding: 0 0 40px;
-  box-shadow: var(--shadow-lg);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.nav-mobile-drawer.open { right: 0; }
-.nav-drawer-header {
+.mnav-top {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--separator);
-  background: var(--bg);
+  padding: 14px 20px;
+  background: var(--bg-dark);
   position: sticky; top: 0; z-index: 1;
 }
-.nav-drawer-title {
-  font-size: .8rem; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; color: var(--text-tertiary);
+.mnav-title {
+  font-size: .88rem; font-weight: 600;
+  color: rgba(255,255,255,.85); letter-spacing: -.1px;
 }
-.nav-drawer-close {
-  background: var(--bg-card); border: 1px solid var(--separator);
-  border-radius: 50%; width: 30px; height: 30px;
-  font-size: .95rem; color: var(--text-secondary);
+.mnav-close {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.12); border: none;
+  border-radius: 50%; font-size: 1rem; color: #fff;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
 }
-.nav-drawer-close:hover { background: rgba(0,0,0,.06); }
-.nav-mobile-links { display: flex; flex-direction: column; }
-.nav-mobile-links a {
-  padding: 16px 20px; font-size: 1rem; font-weight: 500;
+.mnav-links { display: flex; flex-direction: column; }
+.mnav-links a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 19px 24px;
+  font-size: 1.05rem; font-weight: 500;
   color: var(--text-primary); text-decoration: none;
   border-bottom: 1px solid var(--separator);
-  display: flex; align-items: center; justify-content: space-between;
-  transition: background .12s;
+  -webkit-tap-highlight-color: transparent;
 }
-.nav-mobile-links a::after { content: '›'; color: var(--text-tertiary); font-size: 1.1rem; }
-.nav-mobile-links a:hover, .nav-mobile-links a:active { background: var(--bg); }
+.mnav-links a:active { background: var(--bg); }
+.mnav-links a::after { content: '›'; color: var(--text-tertiary); font-size: 1.3rem; }
 
 /* ── 모바일 전체 ── */
 @media (max-width: 768px) {
@@ -757,24 +748,21 @@ footer { background: var(--bg-dark); }
   </div>
 </nav>
 
-<!-- 모바일 오버레이 -->
-<div class="nav-mobile-overlay" id="nav-mobile-overlay"></div>
-
-<!-- 모바일 드로어 -->
-<div class="nav-mobile-drawer" id="nav-mobile-drawer">
-  <div class="nav-drawer-header">
-    <span class="nav-drawer-title">메뉴</span>
-    <button class="nav-drawer-close" id="nav-drawer-close" aria-label="메뉴 닫기">✕</button>
+<!-- 모바일 전체화면 메뉴 -->
+<div id="mnav">
+  <div class="mnav-top">
+    <span class="mnav-title">태국 한인선교 70주년</span>
+    <button class="mnav-close" id="mnav-close" aria-label="메뉴 닫기">✕</button>
   </div>
-  <nav class="nav-mobile-links">
-    <a href="#hero"         onclick="closeMobileNav()">영상</a>
-    <a href="#intro"        onclick="closeMobileNav()">개요</a>
-    <a href="#missionaries" onclick="closeMobileNav()">선교사</a>
-    <a href="#gallery"      onclick="closeMobileNav()">사진 기록</a>
+  <nav class="mnav-links">
+    <a href="#hero"         onclick="closeMnav()">영상</a>
+    <a href="#intro"        onclick="closeMnav()">개요</a>
+    <a href="#missionaries" onclick="closeMnav()">선교사</a>
+    <a href="#gallery"      onclick="closeMnav()">사진 기록</a>
     <a href="history.html">시대별 역사</a>
-    <a href="#timeline-sec" onclick="closeMobileNav()">연대기</a>
-    <a href="#stats"        onclick="closeMobileNav()">파송 통계</a>
-    <a href="#book"         onclick="closeMobileNav()">기념 책자</a>
+    <a href="#timeline-sec" onclick="closeMnav()">연대기</a>
+    <a href="#stats"        onclick="closeMnav()">파송 통계</a>
+    <a href="#book"         onclick="closeMnav()">기념 책자</a>
   </nav>
 </div>
 
@@ -1564,31 +1552,25 @@ footer { background: var(--bg-dark); }
 </footer>
 
 <script>
-/* ── 모바일 햄버거 메뉴 ── */
+/* ── 모바일 전체화면 메뉴 ── */
 (function () {
-  var hamburger = document.getElementById('nav-hamburger');
-  var drawer    = document.getElementById('nav-mobile-drawer');
-  var overlay   = document.getElementById('nav-mobile-overlay');
-  var closeBtn  = document.getElementById('nav-drawer-close');
+  var hbtn = document.getElementById('nav-hamburger');
+  var mnav = document.getElementById('mnav');
+  var cls  = document.getElementById('mnav-close');
 
-  function openMobileNav() {
-    drawer.scrollTop = 0;
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-    hamburger.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  function openMnav() {
+    mnav.style.display = 'block';
+    mnav.scrollTop = 0;
+    hbtn.classList.add('open');
   }
-  window.closeMobileNav = function () {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-    hamburger.classList.remove('open');
-    document.body.style.overflow = '';
+  window.closeMnav = function () {
+    mnav.style.display = 'none';
+    hbtn.classList.remove('open');
   };
-  hamburger.addEventListener('click', openMobileNav);
-  overlay.addEventListener('click', closeMobileNav);
-  closeBtn.addEventListener('click', closeMobileNav);
+  hbtn.addEventListener('click', openMnav);
+  cls.addEventListener('click', closeMnav);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMobileNav();
+    if (e.key === 'Escape') closeMnav();
   });
 })();
 
