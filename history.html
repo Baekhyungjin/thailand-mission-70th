@@ -415,21 +415,179 @@ footer .footer-title { font-size: 1rem; font-weight: 600; color: rgba(255,255,25
 footer a { color: var(--blue); text-decoration: none; }
 footer .footer-credit { margin-top: 12px; color: rgba(255,255,255,.25); font-size: .75rem; }
 
-/* ── 반응형 ── */
-@media (max-width: 800px) {
+/* ── 햄버거 버튼 (PC에서 숨김) ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 8px; margin-right: -4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text-primary); border-radius: 2px;
+  transition: transform .28s, opacity .28s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── 모바일 드로어 ── */
+.nav-mobile-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.45); z-index: 290;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+.nav-mobile-overlay.open { display: block; }
+.nav-mobile-drawer {
+  position: fixed; top: 0; right: -300px;
+  width: 280px; height: 100dvh;
+  background: var(--bg-card); z-index: 300;
+  transition: right .3s cubic-bezier(.4,0,.2,1);
+  overflow-y: auto; padding: 0 0 40px;
+  box-shadow: var(--shadow-lg);
+}
+.nav-mobile-drawer.open { right: 0; }
+.nav-drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; border-bottom: 1px solid var(--separator);
+}
+.nav-drawer-title { font-size: .88rem; font-weight: 600; color: var(--text-primary); }
+.nav-drawer-close {
+  background: var(--bg); border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 1rem; color: var(--text-secondary);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.nav-drawer-close:hover { background: rgba(0,0,0,.08); }
+.nav-mobile-links { display: flex; flex-direction: column; }
+.nav-mobile-links a {
+  padding: 15px 24px; font-size: 1rem; font-weight: 500;
+  color: var(--text-primary); text-decoration: none;
+  border-bottom: 1px solid var(--separator);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background .12s;
+}
+.nav-mobile-links a::after { content: '›'; color: var(--text-tertiary); font-size: 1.2rem; }
+.nav-mobile-links a:hover { background: var(--bg); }
+.nav-mobile-links a.active { color: var(--blue); }
+
+/* ── 시대 퀵점프 바 (모바일 전용) ── */
+.era-quicknav { display: none; }
+
+/* ── 반응형 — 768px 이하 ── */
+@media (max-width: 768px) {
+  /* 네비게이션 */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-logo { font-size: .88rem; }
+
+  /* 퀵점프 바 */
+  .era-quicknav {
+    display: flex; overflow-x: auto; gap: 8px;
+    padding: 10px 16px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--separator);
+    scrollbar-width: none;
+    position: sticky; top: 52px; z-index: 100;
+  }
+  .era-quicknav::-webkit-scrollbar { display: none; }
+  .era-qbtn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 13px; border-radius: 100px;
+    font-size: .76rem; font-weight: 600; white-space: nowrap;
+    text-decoration: none; flex-shrink: 0;
+    border: 1.5px solid var(--separator);
+    color: var(--text-secondary); background: var(--bg);
+    transition: border-color .15s, color .15s;
+  }
+  .era-qbtn:hover, .era-qbtn:active { border-color: var(--blue); color: var(--blue); }
+  .era-qbtn-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  /* 히어로 */
+  .hist-hero { padding: 44px 18px 32px; }
+  .hist-hero h1 { font-size: clamp(1.6rem, 8vw, 2.4rem); margin-bottom: 10px; }
+  .hist-hero p { font-size: .92rem; }
+
+  /* 레이아웃 */
   .hist-layout { grid-template-columns: 1fr; }
   .hist-sidebar { display: none; }
-  .hist-main { padding: 28px 20px 60px; }
-  .era-banner { flex-direction: column; gap: 16px; }
+  .hist-main { padding: 24px 16px 60px; }
+
+  /* 시대 배너 */
+  .era-banner { flex-direction: column; gap: 10px; padding: 22px 18px; border-radius: var(--radius-md); }
   .era-banner-stat { text-align: left; }
+  .era-banner h2 { font-size: 1.3rem; margin-bottom: 6px; }
+  .era-banner p { font-size: .88rem; }
+  .era-big-num { font-size: 2.3rem; }
+  .era-big-label { font-size: .75rem; }
+
+  /* 시대 섹션 간격 */
+  .era-section { margin-bottom: 52px; scroll-margin-top: 112px; }
+  .era-sub-h { margin-top: 22px; margin-bottom: 12px; }
+  .era-overview { padding: 14px 16px; font-size: .93rem; }
+
+  /* 선교사 카드 */
+  .miss-cards { gap: 12px; }
+  .miss-card-top { gap: 12px; padding: 16px 14px 12px; }
+  .miss-avatar, .miss-avatar-num { width: 46px; height: 46px; border-radius: 11px; font-size: 1rem; }
+  .miss-name { font-size: 1.05rem; }
+  .miss-badge { font-size: .68rem; padding: 2px 8px; }
   .miss-facts { grid-template-columns: 1fr; }
-  .miss-fact { border-right: none; }
+  .miss-fact { border-right: none; padding: 10px 14px; }
   .miss-fact:nth-last-child(-n+2) { border-bottom: 1px solid var(--separator); }
   .miss-fact:last-child { border-bottom: none; }
-  .stat-year-grid { grid-template-columns: repeat(3, 1fr); }
-  .memorial-grid { grid-template-columns: 1fr 1fr; }
-  .sum-grid { grid-template-columns: 1fr; }
-  .era-tl-left { width: 80px; font-size: .72rem; }
+  .miss-ministry { padding: 12px 14px; font-size: .85rem; }
+
+  /* 선교사 테이블 → 가로 스크롤 */
+  .miss-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .miss-table { min-width: 500px; font-size: .82rem; }
+  .miss-table th, .miss-table td { padding: 10px 12px; }
+
+  /* 연대기 */
+  .era-tl-left { width: 58px; font-size: .68rem; padding-right: 10px; }
+  .era-tl-right { padding: 0 0 18px 14px; }
+  .era-tl-title { font-size: .85rem; }
+  .era-tl-body { font-size: .79rem; }
+
+  /* 연도별 통계 */
+  .stat-year-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+  .stat-year-card { padding: 10px 8px; }
+  .stat-year-card .yr { font-size: .68rem; }
+  .stat-year-card .unit { font-size: 1.1rem; }
+  .stat-year-card .person { font-size: .68rem; }
+
+  /* 주요 사건 */
+  .key-events { gap: 8px; }
+  .key-event { gap: 10px; padding: 12px 13px; }
+  .key-event-year { min-width: 42px; font-size: .73rem; }
+  .key-event-text { font-size: .82rem; }
+
+  /* 소천 선교사 */
+  .memorial-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .memorial-card { padding: 11px 12px; }
+  .memorial-card .m-name { font-size: .85rem; }
+  .memorial-card .m-date, .memorial-card .m-cause { font-size: .73rem; }
+
+  /* 종합 통계 */
+  .summary-section { padding: 28px 18px 32px; margin-top: 28px; border-radius: var(--radius-md); }
+  .summary-section h2 { font-size: 1.2rem; }
+  .sum-grid { grid-template-columns: 1fr; gap: 10px; }
+  .sum-big { font-size: 2rem; }
+  .sum-card { padding: 22px 16px; }
+
+  /* 단체 태그 */
+  .org-tag { font-size: .75rem; padding: 4px 11px; }
+
+  /* 푸터 */
+  footer { padding: 28px 18px; }
+}
+
+/* 아주 좁은 화면 (≤375px) */
+@media (max-width: 375px) {
+  .stat-year-grid { grid-template-columns: repeat(2, 1fr); }
+  .memorial-grid { grid-template-columns: 1fr; }
+  .era-banner h2 { font-size: 1.15rem; }
+  .era-big-num { font-size: 2rem; }
 }
 </style>
 </head>
@@ -448,7 +606,42 @@ footer .footer-credit { margin-top: 12px; color: rgba(255,255,255,.25); font-siz
       <a href="index.html#gallery">사진</a>
       <a href="index.html#book">책자</a>
     </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+
+<!-- 모바일 오버레이 -->
+<div class="nav-mobile-overlay" id="nav-mobile-overlay"></div>
+
+<!-- 모바일 드로어 -->
+<div class="nav-mobile-drawer" id="nav-mobile-drawer">
+  <div class="nav-drawer-header">
+    <span class="nav-drawer-title">태국 한인선교 70주년</span>
+    <button class="nav-drawer-close" id="nav-drawer-close" aria-label="메뉴 닫기">✕</button>
+  </div>
+  <nav class="nav-mobile-links">
+    <a href="index.html#hero"         onclick="closeMobileNav()">영상</a>
+    <a href="index.html#intro"        onclick="closeMobileNav()">개요</a>
+    <a href="index.html#missionaries" onclick="closeMobileNav()">선교사</a>
+    <a href="history.html" class="active">시대별 역사 (현재 페이지)</a>
+    <a href="index.html#stats"        onclick="closeMobileNav()">파송 통계</a>
+    <a href="index.html#gallery"      onclick="closeMobileNav()">사진 기록</a>
+    <a href="index.html#book"         onclick="closeMobileNav()">기념 책자</a>
+  </nav>
+</div>
+
+<!-- 시대 퀵점프 바 (모바일 전용) -->
+<nav class="era-quicknav" aria-label="시대 바로가기">
+  <a href="#era-a" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-a)"></span>1기 1956</a>
+  <a href="#era-b" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-b)"></span>2기 1970</a>
+  <a href="#era-c" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-c)"></span>3기 1980</a>
+  <a href="#era-d" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-d)"></span>4기 1990</a>
+  <a href="#era-e" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-e)"></span>5기 2000</a>
+  <a href="#era-f" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-f)"></span>6기 2010</a>
+  <a href="#era-g" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--era-g)"></span>7기 2020</a>
+  <a href="#summary" class="era-qbtn"><span class="era-qbtn-dot" style="background:var(--gold)"></span>70년 종합</a>
 </nav>
 
 <!-- 히어로 -->
@@ -1532,6 +1725,33 @@ footer .footer-credit { margin-top: 12px; color: rgba(255,255,255,.25); font-siz
 </footer>
 
 <script>
+/* ── 모바일 햄버거 메뉴 ── */
+(function () {
+  var hamburger = document.getElementById('nav-hamburger');
+  var drawer    = document.getElementById('nav-mobile-drawer');
+  var overlay   = document.getElementById('nav-mobile-overlay');
+  var closeBtn  = document.getElementById('nav-drawer-close');
+
+  function openMobileNav() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  window.closeMobileNav = function () {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  hamburger.addEventListener('click', openMobileNav);
+  overlay.addEventListener('click', closeMobileNav);
+  closeBtn.addEventListener('click', closeMobileNav);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMobileNav();
+  });
+})();
+
 function setActive(el) {
   document.querySelectorAll('.sn-item').forEach(a => a.classList.remove('active'));
   el.classList.add('active');
