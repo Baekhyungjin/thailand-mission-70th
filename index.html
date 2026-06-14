@@ -276,17 +276,17 @@ nav {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 14px; margin-top: 36px;
 }
-.era-card {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.1);
+.scard {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: var(--radius-md); padding: 24px 20px; text-align: center;
 }
-.era-num {
-  font-family: var(--font); font-size: 2.4rem; font-weight: 700;
-  color: #f5f5f7; line-height: 1;
+.scard-num {
+  font-family: var(--font); font-size: 2.6rem; font-weight: 700;
+  color: #ffffff; line-height: 1;
 }
-.era-label { font-size: .78rem; color: rgba(255,255,255,.5); margin-top: 6px; }
-.era-names { font-size: .75rem; color: rgba(255,255,255,.35); margin-top: 4px; }
+.scard-label { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: 6px; font-weight: 600; }
+.scard-names { font-size: .75rem; color: rgba(255,255,255,.4); margin-top: 4px; }
 
 /* ── 사진 갤러리 ── */
 .gallery-section-title {
@@ -329,17 +329,62 @@ nav {
 #lb-close:hover { background: rgba(255,255,255,.25); }
 
 /* ── 푸터 ── */
-footer {
-  background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,.08);
-  padding: 40px 24px; text-align: center;
+footer { background: var(--bg-dark); }
+.footer-institute {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 36px 24px;
+}
+.fi-inner {
+  max-width: 860px; margin: 0 auto;
+  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+}
+.fi-logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.fi-icon {
+  width: 52px; height: 52px; background: var(--blue);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; font-weight: 800; color: #fff; letter-spacing: -.02em;
+  flex-shrink: 0;
+}
+.fi-name { font-size: 1.05rem; font-weight: 700; color: rgba(255,255,255,.9); }
+.fi-director { font-size: .78rem; color: rgba(255,255,255,.45); margin-top: 2px; }
+.fi-desc {
+  flex: 1; font-size: .84rem; color: rgba(255,255,255,.45);
+  line-height: 1.75; min-width: 200px;
+}
+.fi-btn {
+  display: inline-block; padding: 11px 24px;
+  background: var(--blue); color: #fff; text-decoration: none;
+  border-radius: 100px; font-size: .84rem; font-weight: 600;
+  white-space: nowrap; flex-shrink: 0;
+  transition: background .2s, transform .15s;
+}
+.fi-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+.footer-main {
+  padding: 36px 24px 28px; text-align: center;
+  border-top: 1px solid rgba(255,255,255,.05);
 }
 .footer-title { color: rgba(255,255,255,.8); font-size: .95rem; font-weight: 500; }
 .footer-sub { color: rgba(255,255,255,.3); font-size: .8rem; margin-top: 8px; line-height: 1.6; }
+.footer-nav {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px;
+  margin-top: 20px;
+}
+.footer-nav a {
+  color: rgba(255,255,255,.3); text-decoration: none;
+  font-size: .8rem; transition: color .15s;
+}
+.footer-nav a:hover { color: rgba(255,255,255,.7); }
 .footer-credit {
   margin-top: 20px; padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  color: rgba(255,255,255,.45); font-size: .82rem; letter-spacing: .02em;
+  border-top: 1px solid rgba(255,255,255,.06);
+  color: rgba(255,255,255,.3); font-size: .8rem;
 }
+.footer-credit a {
+  color: rgba(255,255,255,.55); text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 1px;
+  transition: color .15s, border-color .15s;
+}
+.footer-credit a:hover { color: #fff; border-color: rgba(255,255,255,.6); }
 
 /* ── 통계 비교 카드 ── */
 .compare-grid {
@@ -525,10 +570,10 @@ footer {
       <a href="#hero">영상</a>
       <a href="#intro">개요</a>
       <a href="#missionaries">선교사</a>
+      <a href="#gallery">사진</a>
       <a href="history.html">역사</a>
       <a href="#timeline-sec">연대기</a>
       <a href="#stats">통계</a>
-      <a href="#gallery">사진</a>
       <a href="#book">책자</a>
     </div>
   </div>
@@ -740,6 +785,52 @@ footer {
         <h4>마지막 발자취</h4>
         <p>1968년 태국 사역 후 에티오피아 한센병 병원에서 4년 추가 사역. 송예근 선교사는 1982년 10월, 전정화 선교사는 2001년 7월 소천하여 미국 네바다 라스베가스에 안장되었습니다.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6. 사진 기록 ══ -->
+<section id="gallery">
+  <div class="section-wrap">
+    <p class="section-eyebrow">Gallery</p>
+    <h2 class="section-title">사진 기록</h2>
+
+    <p class="gallery-section-title">최찬영 선교사</p>
+    <div class="photo-grid">
+      <a href="각종자료/1최찬영선교사자료/최찬영파송에배.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영파송에배.jpg" alt="파송예배" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사부부.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사부부.jpg" alt="선교사 부부" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사입국1956.6..jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사입국1956.6..jpg" alt="1956 입국" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사동창부부.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사동창부부.jpg" alt="동창부부" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영선교사 입국환영객.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사 입국환영객.jpg" alt="입국 환영" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최찬영.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영.jpg" alt="최찬영" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최1.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최1.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/1최찬영선교사자료/최2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최2.jpg" alt="" loading="lazy"></a>
+    </div>
+
+    <p class="gallery-section-title">김순일 선교사</p>
+    <div class="photo-grid">
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp" alt="김순일 선교사" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/김순일선교사 선교관 (1).jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일선교사 선교관 (1).jpg" alt="선교관" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일2.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일3.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일3.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-1.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-1.jpg" alt="" loading="lazy"></a>
+      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-2.jpg" alt="" loading="lazy"></a>
+    </div>
+
+    <p class="gallery-section-title">송예근 선교사</p>
+    <div class="photo-grid">
+      <a href="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG" alt="가족" loading="lazy"></a>
+      <a href="각종자료/송예근선교사/grace song.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/grace song.jpg" alt="Grace Song" loading="lazy"></a>
+      <a href="각종자료/송예근선교사/john song.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/john song.jpg" alt="John Song" loading="lazy"></a>
+      <a href="각종자료/송예근선교사/song family in chengmai thailand.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/song family in chengmai thailand.jpg" alt="치앙마이 가족" loading="lazy"></a>
+    </div>
+
+    <p class="gallery-section-title">참란 목사 자료 (1961–1969)</p>
+    <div class="photo-grid">
+      <a href="각종자료/참란목사의 자료/1961.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961.JPG" alt="1961" loading="lazy"></a>
+      <a href="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" alt="1961 노회" loading="lazy"></a>
+      <a href="각종자료/참란목사의 자료/1965년 4월호.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1965년 4월호.JPG" alt="1965" loading="lazy"></a>
+      <a href="각종자료/참란목사의 자료/1969.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1969.JPG" alt="1969" loading="lazy"></a>
     </div>
   </div>
 </section>
@@ -1181,12 +1272,12 @@ footer {
     <!-- 연대별 파송 -->
     <p style="color:rgba(255,255,255,.4); font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; margin:36px 0 0;">연대별 파송 가정 수</p>
     <div class="era-grid">
-      <div class="era-card"><div class="era-num">2</div><div class="era-label">1950년대</div><div class="era-names">최찬영 · 김순일</div></div>
-      <div class="era-card"><div class="era-num">1</div><div class="era-label">1960년대</div><div class="era-names">송예근</div></div>
-      <div class="era-card"><div class="era-num">4</div><div class="era-label">1970년대</div><div class="era-names">신홍식·김정웅 등</div></div>
-      <div class="era-card"><div class="era-num">31</div><div class="era-label">1980년대</div><div class="era-names">윤수길·양병화 등</div></div>
-      <div class="era-card"><div class="era-num">154</div><div class="era-label">1990년대</div><div class="era-names">폭발적 성장기</div></div>
-      <div class="era-card"><div class="era-num">172</div><div class="era-label">2000년대</div><div class="era-names">지속 성장기</div></div>
+      <div class="scard"><div class="scard-num">2</div><div class="scard-label">1950년대</div><div class="scard-names">최찬영 · 김순일</div></div>
+      <div class="scard"><div class="scard-num">1</div><div class="scard-label">1960년대</div><div class="scard-names">송예근</div></div>
+      <div class="scard"><div class="scard-num">4</div><div class="scard-label">1970년대</div><div class="scard-names">신홍식·김정웅 등</div></div>
+      <div class="scard"><div class="scard-num">31</div><div class="scard-label">1980년대</div><div class="scard-names">윤수길·양병화 등</div></div>
+      <div class="scard"><div class="scard-num">154</div><div class="scard-label">1990년대</div><div class="scard-names">폭발적 성장기</div></div>
+      <div class="scard"><div class="scard-num">172</div><div class="scard-label">2000년대</div><div class="scard-names">지속 성장기</div></div>
     </div>
     <p style="margin-top:20px; color:rgba(255,255,255,.3); font-size:.78rem; line-height:1.7;">
       선교 시기 구분: 예장총회 선교사 시대(1956–1970) → KIM 선교사 시대(1970–1980) →
@@ -1194,52 +1285,6 @@ footer {
     </p>
   </div>
 </div>
-
-<!-- ══ 6. 사진 기록 ══ -->
-<section id="gallery">
-  <div class="section-wrap">
-    <p class="section-eyebrow">Gallery</p>
-    <h2 class="section-title">사진 기록</h2>
-
-    <p class="gallery-section-title">최찬영 선교사</p>
-    <div class="photo-grid">
-      <a href="각종자료/1최찬영선교사자료/최찬영파송에배.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영파송에배.jpg" alt="파송예배" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최찬영선교사부부.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사부부.jpg" alt="선교사 부부" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최찬영선교사입국1956.6..jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사입국1956.6..jpg" alt="1956 입국" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최찬영선교사동창부부.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사동창부부.jpg" alt="동창부부" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최찬영선교사 입국환영객.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영선교사 입국환영객.jpg" alt="입국 환영" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최찬영.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최찬영.jpg" alt="최찬영" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최1.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최1.jpg" alt="" loading="lazy"></a>
-      <a href="각종자료/1최찬영선교사자료/최2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/1최찬영선교사자료/최2.jpg" alt="" loading="lazy"></a>
-    </div>
-
-    <p class="gallery-section-title">김순일 선교사</p>
-    <div class="photo-grid">
-      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일_portrait.bmp" alt="김순일 선교사" loading="lazy"></a>
-      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/김순일선교사 선교관 (1).jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/김순일선교사 선교관 (1).jpg" alt="선교관" loading="lazy"></a>
-      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일2.jpg" alt="" loading="lazy"></a>
-      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일3.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/김순일3.jpg" alt="" loading="lazy"></a>
-      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-1.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-1.jpg" alt="" loading="lazy"></a>
-      <a href="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-2.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/2김순일선교사/김순일선교사 사진자료/ภาพ1/A4-2.jpg" alt="" loading="lazy"></a>
-    </div>
-
-    <p class="gallery-section-title">송예근 선교사</p>
-    <div class="photo-grid">
-      <a href="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/송예근 박사님 가족 사진.JPG" alt="가족" loading="lazy"></a>
-      <a href="각종자료/송예근선교사/grace song.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/grace song.jpg" alt="Grace Song" loading="lazy"></a>
-      <a href="각종자료/송예근선교사/john song.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/john song.jpg" alt="John Song" loading="lazy"></a>
-      <a href="각종자료/송예근선교사/song family in chengmai thailand.jpg" onclick="openLB(this.href);return false;"><img src="각종자료/송예근선교사/song family in chengmai thailand.jpg" alt="치앙마이 가족" loading="lazy"></a>
-    </div>
-
-    <p class="gallery-section-title">참란 목사 자료 (1961–1969)</p>
-    <div class="photo-grid">
-      <a href="각종자료/참란목사의 자료/1961.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961.JPG" alt="1961" loading="lazy"></a>
-      <a href="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1961년 2월제2노회 활동.JPG" alt="1961 노회" loading="lazy"></a>
-      <a href="각종자료/참란목사의 자료/1965년 4월호.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1965년 4월호.JPG" alt="1965" loading="lazy"></a>
-      <a href="각종자료/참란목사의 자료/1969.JPG" onclick="openLB(this.href);return false;"><img src="각종자료/참란목사의 자료/1969.JPG" alt="1969" loading="lazy"></a>
-    </div>
-  </div>
-</section>
 
 <!-- ══ 7. 책자 ══ -->
 <section id="book">
@@ -1274,12 +1319,47 @@ footer {
 
 <!-- 푸터 -->
 <footer>
-  <div class="footer-title">태국 한인 선교 70주년 기념 — 1956 · 2026</div>
-  <div class="footer-sub">
-    최찬영 · 김순일 · 송예근 선교사의 헌신을 기억하며<br>
-    자료 출처: 태국주재한인선교사회
+  <!-- 목회 AI 연구소 소개 -->
+  <div class="footer-institute">
+    <div class="fi-inner">
+      <div class="fi-logo">
+        <div class="fi-icon">AI</div>
+        <div>
+          <div class="fi-name">목회 AI 연구소</div>
+          <div class="fi-director">백형진 소장</div>
+        </div>
+      </div>
+      <div class="fi-desc">
+        AI 기술과 목회 사역의 교차점에서 한국교회의 미래를 연구합니다.<br>
+        설교 준비 · 교육 · 선교 전략에 AI를 활용하는 실천적 방법론을 개발합니다.
+      </div>
+      <a href="https://sunminchurch.my.canva.site/ai" target="_blank" rel="noopener" class="fi-btn">
+        연구소 소개 보기 →
+      </a>
+    </div>
   </div>
-  <div class="footer-credit">제작 : 목회 AI 연구소</div>
+
+  <!-- 기본 정보 -->
+  <div class="footer-main">
+    <div class="footer-title">태국 한인 선교 70주년 기념 — 1956 · 2026</div>
+    <div class="footer-sub">
+      최찬영 · 김순일 · 송예근 선교사의 헌신을 기억하며<br>
+      자료 출처: 태국주재한인선교사회
+    </div>
+    <nav class="footer-nav">
+      <a href="#hero">영상</a>
+      <a href="#intro">개요</a>
+      <a href="#missionaries">선교사</a>
+      <a href="#gallery">사진</a>
+      <a href="history.html">시대별 역사</a>
+      <a href="#timeline-sec">연대기</a>
+      <a href="#stats">통계</a>
+      <a href="#book">책자</a>
+    </nav>
+    <div class="footer-credit">
+      제작 :&nbsp;<a href="https://sunminchurch.my.canva.site/ai" target="_blank" rel="noopener">목회 AI 연구소 백형진 소장</a>
+    </div>
+  </div>
 </footer>
 
 <script>
