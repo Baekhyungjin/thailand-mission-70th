@@ -552,12 +552,182 @@ footer { background: var(--bg-dark); }
   .book-frame-wrap iframe { height: 560px; }
 }
 
-@media (max-width: 640px) {
-  .nav-logo { font-size: .85rem; }
-  .nav-links { display: none; }
-  .mis-layout { grid-template-columns: 1fr; }
-  .mis-photo, .mis-photo-placeholder { width: 100%; height: 220px; }
+/* ── 햄버거 버튼 (PC에서 숨김) ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 8px; margin-right: -4px;
 }
+.nav-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text-primary); border-radius: 2px;
+  transition: transform .28s, opacity .28s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── 모바일 드로어 ── */
+.nav-mobile-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.45); z-index: 290;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+.nav-mobile-overlay.open { display: block; }
+.nav-mobile-drawer {
+  position: fixed; top: 0; right: -300px;
+  width: 280px; height: 100dvh;
+  background: var(--bg-card);
+  z-index: 300;
+  transition: right .3s cubic-bezier(.4,0,.2,1);
+  overflow-y: auto; padding: 0 0 40px;
+  box-shadow: var(--shadow-lg);
+}
+.nav-mobile-drawer.open { right: 0; }
+.nav-drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--separator);
+}
+.nav-drawer-title {
+  font-size: .88rem; font-weight: 600; color: var(--text-primary);
+}
+.nav-drawer-close {
+  background: var(--bg); border: none;
+  border-radius: 50%; width: 32px; height: 32px;
+  font-size: 1rem; color: var(--text-secondary);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.nav-drawer-close:hover { background: rgba(0,0,0,.08); }
+.nav-mobile-links { display: flex; flex-direction: column; }
+.nav-mobile-links a {
+  padding: 15px 24px; font-size: 1rem; font-weight: 500;
+  color: var(--text-primary); text-decoration: none;
+  border-bottom: 1px solid var(--separator);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background .12s;
+}
+.nav-mobile-links a::after { content: '›'; color: var(--text-tertiary); font-size: 1.2rem; }
+.nav-mobile-links a:hover { background: var(--bg); }
+
+/* ── 모바일 전체 ── */
+@media (max-width: 768px) {
+  /* 네비게이션 */
+  .nav-logo { font-size: .88rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* 히어로 */
+  #hero { padding: 52px 18px 36px; }
+  .hero-sub { margin-bottom: 32px; }
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 14px; max-width: 100%;
+  }
+  .avi-pill { font-size: .78rem; padding: 8px 16px; }
+
+  /* 섹션 공통 */
+  .section-wrap { padding: 52px 18px; }
+  .section-title { margin-bottom: 12px; }
+  .section-body { font-size: .94rem; }
+  .divider-section { padding: 52px 18px; }
+
+  /* 통계 카드 */
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 28px; }
+  .stat-num { font-size: 2.2rem; }
+  .stat-card { padding: 22px 18px; }
+
+  /* 선교사 탭 */
+  .tab-bar {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    padding-bottom: 0; gap: 0;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn { padding: 10px 14px; font-size: .82rem; white-space: nowrap; }
+  .tab-pane { padding: 28px 0; }
+
+  /* 선교사 프로필 */
+  .mis-layout { grid-template-columns: 1fr; gap: 24px; margin-bottom: 28px; }
+  .mis-photo, .mis-photo-placeholder { width: 100%; max-width: 240px; height: 220px; }
+  .mis-name { font-size: 1.6rem; }
+
+  /* 타임라인 */
+  .timeline { padding-left: 24px; }
+  .tl-dot { left: -21px; }
+  .tl-item { margin-bottom: 24px; }
+
+  /* 시대별 역사 아코디언 */
+  .era-list { gap: 8px; margin: 28px 0; }
+  .era-header { gap: 8px; padding: 14px 16px; }
+  .era-badge { min-width: 80px; font-size: .68rem; padding: 4px 8px; }
+  .era-title { font-size: .9rem; }
+  .era-desc { font-size: .75rem; }
+  .era-stats { min-width: 44px; }
+  .era-count { font-size: 1.2rem; }
+  .era-chevron { font-size: 1.1rem; }
+  .era-body { padding: 14px 16px 18px; }
+  .era-body-inner { grid-template-columns: 1fr; }
+
+  /* 파송 통계 다크 섹션 */
+  .era-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 24px; }
+  .scard { padding: 16px 8px; }
+  .scard-num { font-size: 1.9rem; }
+  .scard-label { font-size: .68rem; margin-top: 4px; }
+  .scard-names { display: none; }
+
+  /* 통계 비교/지역 — 기존 640px 쿼리 강화 */
+  .compare-grid { grid-template-columns: 1fr; gap: 12px; margin: 24px 0 20px; }
+  .compare-card { padding: 22px 18px; }
+  .compare-big { font-size: 2rem; }
+  .region-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  /* 사진 갤러리 */
+  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .photo-grid img { height: 110px; }
+  .gallery-section-title { margin: 28px 0 12px; }
+
+  /* 책자 */
+  .book-toolbar { flex-direction: column; align-items: stretch; gap: 10px; }
+  .book-download { justify-content: center; text-align: center; }
+  .book-frame-wrap iframe { height: 500px; }
+  .book-mobile-hint {
+    display: block;
+    padding: 14px 18px;
+    background: rgba(0,113,227,.06);
+    border: 1px solid rgba(0,113,227,.15);
+    border-radius: var(--radius-sm);
+    font-size: .84rem; color: var(--text-secondary);
+    margin-bottom: 16px; text-align: center;
+  }
+
+  /* 히스토리 요약 그리드 */
+  .history-summary-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
+
+  /* 푸터 연구소 배너 */
+  .fi-inner { flex-direction: column; gap: 18px; }
+  .fi-desc { min-width: 0; font-size: .82rem; }
+  .fi-btn { text-align: center; width: 100%; }
+  .footer-institute { padding: 28px 18px; }
+
+  /* 푸터 일반 */
+  .footer-main { padding: 24px 18px 20px; }
+  .footer-nav { gap: 3px 12px; }
+  .footer-title { font-size: .88rem; }
+}
+
+/* 아주 작은 화면 (≤375px) */
+@media (max-width: 375px) {
+  .era-grid { grid-template-columns: repeat(2, 1fr); }
+  .scard-num { font-size: 1.6rem; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 책자 힌트: PC에선 숨김 */
+.book-mobile-hint { display: none; }
 </style>
 </head>
 <body>
@@ -576,8 +746,32 @@ footer { background: var(--bg-dark); }
       <a href="#stats">통계</a>
       <a href="#book">책자</a>
     </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- 모바일 오버레이 -->
+<div class="nav-mobile-overlay" id="nav-mobile-overlay"></div>
+
+<!-- 모바일 드로어 -->
+<div class="nav-mobile-drawer" id="nav-mobile-drawer">
+  <div class="nav-drawer-header">
+    <span class="nav-drawer-title">태국 한인선교 70주년</span>
+    <button class="nav-drawer-close" id="nav-drawer-close" aria-label="메뉴 닫기">✕</button>
+  </div>
+  <nav class="nav-mobile-links">
+    <a href="#hero"         onclick="closeMobileNav()">영상</a>
+    <a href="#intro"        onclick="closeMobileNav()">개요</a>
+    <a href="#missionaries" onclick="closeMobileNav()">선교사</a>
+    <a href="#gallery"      onclick="closeMobileNav()">사진 기록</a>
+    <a href="history.html">시대별 역사</a>
+    <a href="#timeline-sec" onclick="closeMobileNav()">연대기</a>
+    <a href="#stats"        onclick="closeMobileNav()">파송 통계</a>
+    <a href="#book"         onclick="closeMobileNav()">기념 책자</a>
+  </nav>
+</div>
 
 <!-- ══ 1. 히어로 ══ -->
 <section id="hero">
@@ -1293,6 +1487,8 @@ footer { background: var(--bg-dark); }
     <h2 class="section-title">70주년 기념대회 책자</h2>
     <p class="section-body">한국교회 태국선교 70주년 기념대회 공식 책자입니다. 페이지를 넘기며 읽거나 전체를 다운로드할 수 있습니다.</p>
 
+    <p class="book-mobile-hint">모바일에서는 PDF 뷰어가 제한될 수 있습니다. 아래 <strong>PDF 다운로드</strong> 버튼을 눌러 책자를 확인하세요.</p>
+
     <div class="book-toolbar">
       <span style="color:var(--text-secondary);font-size:.88rem;">3차 수정 · 최종 배포본</span>
       <a class="book-download"
@@ -1363,6 +1559,33 @@ footer { background: var(--bg-dark); }
 </footer>
 
 <script>
+/* ── 모바일 햄버거 메뉴 ── */
+(function () {
+  var hamburger = document.getElementById('nav-hamburger');
+  var drawer    = document.getElementById('nav-mobile-drawer');
+  var overlay   = document.getElementById('nav-mobile-overlay');
+  var closeBtn  = document.getElementById('nav-drawer-close');
+
+  function openMobileNav() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  window.closeMobileNav = function () {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  hamburger.addEventListener('click', openMobileNav);
+  overlay.addEventListener('click', closeMobileNav);
+  closeBtn.addEventListener('click', closeMobileNav);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMobileNav();
+  });
+})();
+
 function toggleEra(card) {
   card.classList.toggle('open');
 }
