@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시대별 선교 역사 — 태국 한인 선교 70주년</title>
+<style>
+/* ── Apple Design System ── */
+:root {
+  --bg:          #f5f5f7;
+  --bg-card:     #ffffff;
+  --bg-dark:     #1d1d1f;
+  --bg-dark2:    #2d2d2f;
+  --text-primary:   #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary:  #86868b;
+  --text-white:     #f5f5f7;
+  --blue:     #0071e3;
+  --blue-dark:#005bbf;
+  --gold:     #b5893a;
+  --gold-lt:  #d4a853;
+  --separator: rgba(0,0,0,0.08);
+  --radius-sm:  10px;
+  --radius-md:  18px;
+  --radius-lg:  28px;
+  --shadow-sm:  0 2px 12px rgba(0,0,0,.07);
+  --shadow-md:  0 8px 32px rgba(0,0,0,.11);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,.16);
+  --font: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Apple SD Gothic Neo',
+          'Malgun Gothic', '맑은 고딕', sans-serif;
+  --font-text: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Apple SD Gothic Neo',
+               'Malgun Gothic', '맑은 고딕', sans-serif;
+  --era-a: #0071e3;
+  --era-b: #3478f6;
+  --era-c: #4a90e2;
+  --era-d: #9a7030;
+  --era-e: #a07828;
+  --era-f: #c07000;
+  --era-g: #6c757d;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-text); background: var(--bg);
+       color: var(--text-primary); -webkit-font-smoothing: antialiased; }
+
+/* ── 내비게이션 ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(245,245,247,.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--separator);
+  display: flex; align-items: center; justify-content: center;
+  height: 52px;
+}
+.nav-inner {
+  width: 100%; max-width: 1200px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+}
+.nav-logo {
+  font-family: var(--font); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); white-space: nowrap; letter-spacing: -.3px;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 4px; }
+.nav-links a {
+  color: var(--text-secondary); text-decoration: none;
+  font-size: .84rem; font-family: var(--font-text);
+  padding: 6px 12px; border-radius: 8px; transition: all .2s;
+}
+.nav-links a:hover { background: rgba(0,0,0,.06); color: var(--text-primary); }
+.nav-links a.active { color: var(--blue); }
+
+/* ── 히어로 ── */
+.hist-hero {
+  background: var(--bg-dark);
+  padding: 64px 24px 52px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hist-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(181,137,58,.2) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hist-hero .eyebrow {
+  display: inline-block;
+  font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 16px;
+}
+.hist-hero h1 {
+  font-family: var(--font); font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700; color: #f5f5f7; letter-spacing: -.03em;
+  line-height: 1.15; margin-bottom: 14px;
+}
+.hist-hero p {
+  font-size: 1.05rem; color: rgba(255,255,255,.55); max-width: 520px; margin: 0 auto;
+}
+
+/* ── 메인 레이아웃 ── */
+.hist-layout {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 0; padding: 0;
+  align-items: start;
+}
+
+/* ── 사이드바 ── */
+.hist-sidebar {
+  position: sticky; top: 52px;
+  height: calc(100vh - 52px);
+  overflow-y: auto;
+  padding: 32px 0 32px 24px;
+  border-right: 1px solid var(--separator);
+}
+.hist-sidebar::-webkit-scrollbar { width: 4px; }
+.hist-sidebar::-webkit-scrollbar-track { background: transparent; }
+.hist-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 4px; }
+.sn-label {
+  font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-tertiary); padding: 0 12px; margin-bottom: 10px;
+}
+.sn-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 10px; margin-bottom: 3px;
+  text-decoration: none; color: var(--text-secondary);
+  font-size: .82rem; line-height: 1.35;
+  transition: background .15s, color .15s;
+  cursor: pointer;
+}
+.sn-item:hover { background: rgba(0,0,0,.05); color: var(--text-primary); }
+.sn-item.active { background: rgba(0,113,227,.1); color: var(--blue); font-weight: 600; }
+.sn-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.sn-dot-a { background: var(--era-a); }
+.sn-dot-b { background: var(--era-b); }
+.sn-dot-c { background: var(--era-c); }
+.sn-dot-d { background: var(--era-d); }
+.sn-dot-e { background: var(--era-e); }
+.sn-dot-f { background: var(--era-f); }
+.sn-dot-g { background: var(--era-g); }
+.sn-divider { height: 1px; background: var(--separator); margin: 12px 12px; }
+.sn-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 9px 12px; border-radius: 10px; margin-bottom: 16px;
+  text-decoration: none; color: var(--blue);
+  font-size: .82rem; font-weight: 600;
+  transition: background .15s;
+}
+.sn-back:hover { background: rgba(0,113,227,.08); }
+
+/* ── 메인 콘텐츠 ── */
+.hist-main {
+  padding: 40px 40px 80px 48px;
+  min-width: 0;
+}
+
+/* ── 시대 섹션 ── */
+.era-section {
+  margin-bottom: 80px;
+  scroll-margin-top: 72px;
+}
+
+/* ── 시대 배너 ── */
+.era-banner {
+  border-radius: var(--radius-lg);
+  padding: 36px 36px;
+  margin-bottom: 36px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  position: relative; overflow: hidden;
+}
+.era-banner::before {
+  content: ''; position: absolute; right: -40px; top: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,.06); pointer-events: none;
+}
+.era-banner-a { background: linear-gradient(135deg, #0054b3, #0071e3); }
+.era-banner-b { background: linear-gradient(135deg, #2260e0, #3478f6); }
+.era-banner-c { background: linear-gradient(135deg, #2f6cc0, #4a90e2); }
+.era-banner-d { background: linear-gradient(135deg, #7a5620, #9a7030); }
+.era-banner-e { background: linear-gradient(135deg, #7e5d1e, #a07828); }
+.era-banner-f { background: linear-gradient(135deg, #955500, #c07000); }
+.era-banner-g { background: linear-gradient(135deg, #495057, #6c757d); }
+
+.era-banner-body { flex: 1; }
+.era-banner-tag {
+  display: inline-block;
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.65); margin-bottom: 10px;
+}
+.era-banner h2 {
+  font-family: var(--font); font-size: 1.65rem; font-weight: 700;
+  color: #fff; letter-spacing: -.02em; margin-bottom: 8px;
+}
+.era-banner p { font-size: .95rem; color: rgba(255,255,255,.65); }
+.era-banner-stat { text-align: right; flex-shrink: 0; }
+.era-big-num {
+  display: block; font-family: var(--font);
+  font-size: 3.2rem; font-weight: 700; color: #fff; line-height: 1;
+  letter-spacing: -.04em;
+}
+.era-big-label { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: 4px; }
+.era-big-sub { font-size: .75rem; color: rgba(255,255,255,.4); margin-top: 2px; }
+
+/* ── 섹션 내 콘텐츠 ── */
+.era-overview {
+  font-size: 1rem; line-height: 1.75; color: var(--text-secondary);
+  margin-bottom: 36px;
+  padding: 20px 24px;
+  background: var(--bg-card); border-radius: var(--radius-md);
+  border-left: 3px solid var(--blue); box-shadow: var(--shadow-sm);
+}
+.era-sub-h {
+  font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-bottom: 16px; margin-top: 36px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--separator);
+}
+
+/* ── 선교사 카드 ── */
+.miss-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 12px; }
+.miss-card {
+  background: var(--bg-card); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+  transition: box-shadow .2s;
+}
+.miss-card:hover { box-shadow: var(--shadow-md); }
+.miss-card-top {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 24px 24px 20px;
+}
+.miss-avatar {
+  width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--text-tertiary);
+}
+.miss-avatar-num {
+  width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font); font-size: 1.3rem; font-weight: 700; color: #fff;
+}
+.miss-card-title { flex: 1; }
+.miss-name {
+  font-family: var(--font); font-size: 1.2rem; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 4px;
+}
+.miss-badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+.miss-badge {
+  display: inline-block; font-size: .72rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(0,113,227,.1); color: var(--blue);
+}
+.miss-period { font-size: .82rem; color: var(--text-tertiary); }
+.miss-facts {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--separator);
+  margin: 0;
+}
+.miss-fact {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--separator);
+  border-right: 1px solid var(--separator);
+}
+.miss-fact:nth-child(even) { border-right: none; }
+.miss-fact:nth-last-child(-n+2) { border-bottom: none; }
+.miss-fact-key {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--text-tertiary); margin-bottom: 3px;
+}
+.miss-fact-val { font-size: .87rem; color: var(--text-primary); line-height: 1.5; }
+.miss-ministry {
+  padding: 16px 24px; font-size: .9rem; line-height: 1.7;
+  color: var(--text-secondary); background: var(--bg);
+  border-top: 1px solid var(--separator);
+}
+.miss-ministry strong { color: var(--text-primary); }
+
+/* ── 선교사 목록 (3기 이후) ── */
+.miss-table-wrap {
+  background: var(--bg-card); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.miss-table {
+  width: 100%; border-collapse: collapse; font-size: .87rem;
+}
+.miss-table th {
+  text-align: left; padding: 12px 16px;
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--text-tertiary); background: var(--bg);
+  border-bottom: 1px solid var(--separator);
+}
+.miss-table td {
+  padding: 12px 16px; border-bottom: 1px solid var(--separator);
+  color: var(--text-primary); vertical-align: top;
+  line-height: 1.55;
+}
+.miss-table tr:last-child td { border-bottom: none; }
+.miss-table tr:hover td { background: rgba(0,0,0,.02); }
+.miss-table .t-name { font-weight: 600; white-space: nowrap; }
+.miss-table .t-org { font-size: .78rem; color: var(--blue); margin-top: 2px; }
+.miss-table .t-loc { color: var(--text-secondary); }
+.miss-table .t-desc { font-size: .85rem; color: var(--text-secondary); }
+
+/* ── 연대기 (시대별) ── */
+.era-tl { display: flex; flex-direction: column; gap: 0; }
+.era-tl-item {
+  display: flex; gap: 0; position: relative;
+}
+.era-tl-left {
+  width: 110px; flex-shrink: 0;
+  text-align: right; padding: 0 20px 0 0; padding-top: 2px;
+  font-size: .78rem; font-weight: 700; color: var(--text-tertiary);
+  white-space: nowrap;
+}
+.era-tl-line {
+  width: 1px; background: var(--separator); flex-shrink: 0;
+  position: relative;
+}
+.era-tl-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--bg-card); border: 2px solid;
+  position: absolute; top: 4px; left: -5px;
+}
+.era-tl-right {
+  flex: 1; padding: 0 0 24px 20px;
+}
+.era-tl-title { font-size: .9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+.era-tl-body { font-size: .84rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── 통계 카드 (4~7기) ── */
+.stat-year-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 10px; margin-bottom: 12px;
+}
+.stat-year-card {
+  background: var(--bg-card); border-radius: var(--radius-sm);
+  padding: 14px 12px; text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.stat-year-card .yr { font-size: .72rem; color: var(--text-tertiary); margin-bottom: 4px; }
+.stat-year-card .unit { font-size: 1.3rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+.stat-year-card .person { font-size: .72rem; color: var(--text-secondary); margin-top: 2px; }
+
+/* ── 주요 사건 ── */
+.key-events { display: flex; flex-direction: column; gap: 10px; }
+.key-event {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--bg-card); border-radius: var(--radius-sm);
+  padding: 14px 16px; box-shadow: var(--shadow-sm);
+}
+.key-event-year {
+  font-size: .78rem; font-weight: 700; color: var(--blue);
+  white-space: nowrap; min-width: 52px; padding-top: 2px;
+}
+.key-event-text { font-size: .87rem; color: var(--text-primary); line-height: 1.6; }
+.key-event-text strong { color: var(--text-primary); }
+
+/* ── 소천 선교사 ── */
+.memorial-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.memorial-card {
+  background: var(--bg-card); border-radius: var(--radius-sm);
+  padding: 14px 16px; box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--separator);
+}
+.memorial-card .m-name { font-size: .9rem; font-weight: 600; color: var(--text-primary); }
+.memorial-card .m-date { font-size: .78rem; color: var(--text-secondary); margin-top: 3px; }
+.memorial-card .m-cause { font-size: .78rem; color: var(--text-tertiary); margin-top: 2px; }
+
+/* ── 단체 목록 ── */
+.org-wrap {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.org-tag {
+  display: inline-block; font-size: .8rem; font-weight: 500;
+  padding: 5px 13px; border-radius: 100px;
+  background: var(--bg-card); border: 1px solid var(--separator);
+  color: var(--text-secondary); box-shadow: var(--shadow-sm);
+}
+
+/* ── 종합 통계 ── */
+.summary-section {
+  background: var(--bg-dark); border-radius: var(--radius-lg);
+  padding: 48px 40px; margin-top: 40px; margin-bottom: 40px;
+  scroll-margin-top: 72px;
+}
+.summary-section h2 {
+  font-family: var(--font); font-size: 1.5rem; font-weight: 700;
+  color: #f5f5f7; margin-bottom: 8px;
+}
+.summary-section .s-sub {
+  font-size: .9rem; color: rgba(255,255,255,.4); margin-bottom: 36px;
+}
+.sum-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.sum-card {
+  background: rgba(255,255,255,.07); border-radius: var(--radius-md);
+  padding: 28px 20px; text-align: center;
+}
+.sum-big { font-size: 2.4rem; font-weight: 700; color: #f5f5f7; line-height: 1; }
+.sum-mid { font-size: .85rem; color: rgba(255,255,255,.45); margin-top: 4px; }
+.sum-label { font-size: .88rem; color: rgba(255,255,255,.6); margin-top: 10px; }
+
+/* ── 푸터 ── */
+footer {
+  background: var(--bg-dark); color: rgba(255,255,255,.4);
+  text-align: center; padding: 40px 24px;
+  font-size: .82rem; line-height: 2;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+footer .footer-title { font-size: 1rem; font-weight: 600; color: rgba(255,255,255,.7); }
+footer a { color: var(--blue); text-decoration: none; }
+footer .footer-credit { margin-top: 12px; color: rgba(255,255,255,.25); font-size: .75rem; }
+
+/* ── 반응형 ── */
+@media (max-width: 800px) {
+  .hist-layout { grid-template-columns: 1fr; }
+  .hist-sidebar { display: none; }
+  .hist-main { padding: 28px 20px 60px; }
+  .era-banner { flex-direction: column; gap: 16px; }
+  .era-banner-stat { text-align: left; }
+  .miss-facts { grid-template-columns: 1fr; }
+  .miss-fact { border-right: none; }
+  .miss-fact:nth-last-child(-n+2) { border-bottom: 1px solid var(--separator); }
+  .miss-fact:last-child { border-bottom: none; }
+  .stat-year-grid { grid-template-columns: repeat(3, 1fr); }
+  .memorial-grid { grid-template-columns: 1fr 1fr; }
+  .sum-grid { grid-template-columns: 1fr; }
+  .era-tl-left { width: 80px; font-size: .72rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- 내비게이션 -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">태국 한인선교 70주년</a>
+    <div class="nav-links">
+      <a href="index.html#hero">영상</a>
+      <a href="index.html#intro">개요</a>
+      <a href="index.html#missionaries">선교사</a>
+      <a href="history.html" class="active">시대별 역사</a>
+      <a href="index.html#stats">통계</a>
+      <a href="index.html#gallery">사진</a>
+      <a href="index.html#book">책자</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 히어로 -->
+<div class="hist-hero">
+  <p class="eyebrow">1956 · 2026 · 70 Years</p>
+  <h1>시대별 선교 역사</h1>
+  <p>권삼승 선교사 연구를 기반으로 정리한 7개 시대별 한국인 태국 선교의 발자취</p>
+</div>
+
+<!-- 메인 레이아웃 -->
+<div class="hist-layout">
+
+  <!-- 사이드바 -->
+  <aside class="hist-sidebar">
+    <a href="index.html" class="sn-back">← 메인으로</a>
+    <div class="sn-label">시대 선택</div>
+    <a href="#era-a" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-a"></span>1기 1956–1969
+    </a>
+    <a href="#era-b" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-b"></span>2기 1970–1979
+    </a>
+    <a href="#era-c" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-c"></span>3기 1980–1989
+    </a>
+    <a href="#era-d" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-d"></span>4기 1990–1999
+    </a>
+    <a href="#era-e" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-e"></span>5기 2000–2009
+    </a>
+    <a href="#era-f" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-f"></span>6기 2010–2019
+    </a>
+    <a href="#era-g" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot sn-dot-g"></span>7기 2020–2026
+    </a>
+    <div class="sn-divider"></div>
+    <a href="#summary" class="sn-item" onclick="setActive(this)">
+      <span class="sn-dot" style="background:var(--gold)"></span>70년 종합
+    </a>
+  </aside>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="hist-main">
+
+    <!-- ══ 1기: 1956–1969 ══ -->
+    <section class="era-section" id="era-a">
+      <div class="era-banner era-banner-a">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">1기 · 1956–1969</div>
+          <h2>초기 레전드 선교사들</h2>
+          <p>대한민국 최초 해외 선교사들의 헌신과 개척 사역</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">3</span>
+          <div class="era-big-label">가정</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        한국전쟁의 상흔이 채 가시지 않은 1956년, 대한민국은 처음으로 해외 선교사를 파송했습니다.
+        1954년 홍콩 아시아에큐메니칼선교협의회(ACEM)에서 태국 기독교총회(CCT)의 초청에 응한 한국교회가
+        장로교신학교 51회 동기 최찬영 목사와 김성권 목사를 선발했고, 여권 문제로 최찬영 선교사만 먼저 태국으로 향했습니다.
+        이후 김순일 선교사와 의료 선교사 송예근 박사가 합류하며 세 가정이 각기 다른 사역 분야에서
+        탁월함을 나타내어 "레전드"로 기억되는 시대를 열었습니다.
+      </p>
+
+      <div class="era-sub-h">선교사 소개</div>
+      <div class="miss-cards">
+
+        <!-- 최찬영 -->
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:var(--era-a)">1</div>
+            <div class="miss-card-title">
+              <div class="miss-name">최찬영 · 김광명 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">장로교총회 파송</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">대한민국 최초 해외 선교사</span>
+              </div>
+              <div class="miss-period">1956. 6. 4 입국 — 방콕 · 동남아시아 · 중국</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">파송교회</div>
+              <div class="miss-fact-val">영락교회 (한경직 목사)<br>파송예배 1955. 4. 24</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">언어·배경</div>
+              <div class="miss-fact-val">한국어·일본어·중국어 능통<br>생명의말씀사 총무 출신</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">방콕 쌈얀교회 담임 (1958–1960)<br>태국·라오스 성서공회 총무 (1962–)<br>아시아태평양 성서공회 총무 (1978–)</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">대표 업적</div>
+              <div class="miss-fact-val">1971년 태국어 성경번역 주도<br>중국 남경 애덕인쇄소 완공 (1987)<br>아시아인 최초 세계성서공회 아태 총무</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            생명의말씀사 총무로 사역하다 소명을 받아 파송된 최찬영 선교사는 태국어를 배운 후 방콕 제2교회(쌈얀교회) 담임으로 2년간 부흥을 이루었습니다.
+            1962년 태국·라오스 성서공회 총무로 취임하여 불교 사원과 학교에 성경을 보급하는 데 힘썼으며,
+            <strong>1971년 가장 완역도가 높다고 평가받는 태국어 성경번역</strong>을 주도했습니다.
+            1978년 아시아인 최초로 아시아태평양 성서공회 총무에 취임, 30년간 성경 번역·인쇄·반포에 헌신하여 한국장로교 역사상 최장 기간(1956–1991) 활동한 선교사로 기록됩니다.
+          </p>
+        </div>
+
+        <!-- 김순일 -->
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:var(--era-b)">2</div>
+            <div class="miss-card-title">
+              <div class="miss-name">김순일 · 김윤희 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">장로교총회 파송</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">한국인 최초 선교학 박사</span>
+              </div>
+              <div class="miss-period">1956. 11 입국 — 치앙라이 · 치앙마이 · 방콕 (1956–1975)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">학력</div>
+              <div class="miss-fact-val">일본 계명관대·개혁파신학교 수료<br>프린스턴 M.Div. (1963, 8.5개월 완성)<br>풀러신학교 D.Miss. (1974, 한국인 최초)</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">CCT 제2노회 38개 교회 순회<br>치앙라이 노회장 4년 (1958–1961)<br>1971.1.24 방콕한인교회 최초 설립</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">사역지</div>
+              <div class="miss-fact-val">치앙라이 노회 (한센병 교회 9곳 포함)<br>치앙마이 맥길버리신학교 강의<br>LA 태국인 제일교회 개척 (1973)</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">특기 사항</div>
+              <div class="miss-fact-val">연간 6만 명 전도·700명 회심<br>2차 사역: KIM 아태 디렉터 (1970–1975)<br>귀국 후 동서선교개발연구원 사역</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            황해도 출신의 김순일 선교사는 대구 경북대에서 태국인 신학생의 선교 요청을 듣고 소명을 받았습니다.
+            치앙라이에서 38개 교회를 순회하며 부임 5개월 만에 만장일치 박수로 외국인 최초 노회장에 추대되었습니다.
+            나환자 교회 9곳을 포함한 제2노회를 4년간 섬겼으며, <strong>1971년 1월 24일 방콕한인교회를 최초로 설립</strong>하여 한인교회 사역의 기틀을 놓았습니다.
+            풀러신학교에서 한국인 최초 선교학 박사(D.Miss.)를 취득한 학문적 선교사이기도 합니다.
+          </p>
+        </div>
+
+        <!-- 송예근 -->
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:#4a90e2">3</div>
+            <div class="miss-card-title">
+              <div class="miss-name">송예근 · 전정화 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">동산의료복지선교회 파송</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">한국 최초 전문인 선교사</span>
+              </div>
+              <div class="miss-period">1964. 9 입국 — 치앙마이 맥켄재활병원 (1964–1968)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">학력·경력</div>
+              <div class="miss-fact-val">경성제국대학 의학부·대학원 졸업 (의학박사)<br>평양의대 교수·해군 군의관<br>미국 워싱턴대학교 박사후과정</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">파송 경위</div>
+              <div class="miss-fact-val">평신도 장로 신분 파송<br>김순일 선교사 요청으로 결정<br>충무무공훈장 수훈</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">치앙마이 맥켄재활병원 의료선교<br>매일 100명 이상 나환자 치료<br>의료기술 제자 양성</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">특기 사항</div>
+              <div class="miss-fact-val">박정희 대통령 주치의 (추정)<br>청와대에서 피아노 기증 (1966)<br>앰뷸런스 1대 기증 (1969)<br>이후 에티오피아 선교 (4년)</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            의학박사이자 평신도 장로인 송예근 선교사는 <strong>한국 최초의 전문인(의료) 선교사</strong>입니다.
+            김순일 선교사의 요청으로 치앙마이 맥켄재활병원에 와서 4년간 매일 100명 이상의 나환자를 돌보았습니다.
+            간호사가 없던 환경에서 환자 중 청년을 직접 양성하여 의료기사로 세웠으며, 병원 내 산띠탐교회에서 월 1회 설교도 담당했습니다.
+            1968년 사역을 마친 후에도 앰뷸런스 1대를 기증하고 에티오피아로 가서 4년 추가 선교를 감당했습니다.
+          </p>
+        </div>
+
+      </div><!-- /miss-cards -->
+
+      <div class="era-sub-h">연대기</div>
+      <div class="era-tl">
+        <div class="era-tl-item">
+          <div class="era-tl-left">1954</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">홍콩 ACEM에서 파송 결의</div>
+            <div class="era-tl-body">아시아에큐메니칼선교협의회에서 태국 CCT가 아시아 선교 동역자를 초청. 한국 대표 계일승 박사가 참석하여 파송 기초 마련.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1955. 4. 24</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">최찬영·김광명 선교사 파송 예배</div>
+            <div class="era-tl-body">영락교회에서 한국 최초 해외 선교사 파송 예배. 미국 북장로교가 다큐멘터리 「This High Calling」 제작.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1956. 6. 4</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">최찬영 선교사 태국 입국</div>
+            <div class="era-tl-body">김포 출발 → 홍콩 경유 → 방콕 도착. 대한민국 여권 최초 해외 선교사.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1956. 11</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">김순일·김윤희 선교사 입국</div>
+            <div class="era-tl-body">새문안교회 41회 총회 중 파송 예배. 이승만 대통령 특별 배려로 2개월 만에 여권 발급.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1958</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">김순일 선교사, 치앙라이 노회장 추대</div>
+            <div class="era-tl-body">부임 5개월 만에 만장일치 박수로 CCT 제2노회장 피선. 외국인 최초. 38개 교회(한센병 교회 9곳) 4년 순회.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1958. 8</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">최찬영 선교사, 쌈얀교회 담임</div>
+            <div class="era-tl-body">방콕 제2교회 담임으로 2년간 부흥 사역. 예배 3부로 확대, 교회 신축 계획까지 세울 정도로 성장.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1962</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">최찬영 선교사, 태국·라오스 성서공회 총무 취임</div>
+            <div class="era-tl-body">동양인 최초 성서공회 총무. 사원·학교 성경 보급에 집중. 이후 총무직은 태국인이 계승.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1963</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">김순일 선교사, 프린스턴 M.Div. 취득</div>
+            <div class="era-tl-body">8개월 반이라는 이례적인 속도로 석사 완성.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1964. 9</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">송예근·전정화 선교사 입국</div>
+            <div class="era-tl-body">한국 최초 전문인(의료) 선교사. 치앙마이 맥켄재활병원에서 나환자 의료선교 시작.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1968. 12</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-a)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">송예근 선교사 사역 마침, 앰뷸런스 기증</div>
+            <div class="era-tl-body">4년의 의료선교 완수 후 귀국. 이듬해 앰뷸런스 1대 기증. 이후 에티오피아에서 4년 추가 선교.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 2기: 1970–1979 ══ -->
+    <section class="era-section" id="era-b">
+      <div class="era-banner era-banner-b">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">2기 · 1970–1979</div>
+          <h2>사역의 기틀을 마련하는 시기</h2>
+          <p>명맥을 이어가며 구조와 제도적 기반을 세운 시대</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">5</span>
+          <div class="era-big-label">가정</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        이 시기는 태국에서 한국인의 선교가 명맥을 간신히 유지하는 시기였습니다. 선교사들은 장래의 사역을 위해 긴 연구 안식년을 가지며 준비했습니다.
+        그러나 두 가지 중요한 제도적 기반이 이 시기에 마련됩니다.
+        첫째, 1971년 김순일 선교사가 <strong>방콕한인교회를 최초로 설립</strong>하여 한인교회 사역의 문을 열었습니다.
+        둘째, 1980년 직전 정승회 선교사가 확보한 <strong>EFT 비자 쿼터 20개</strong>는 이후 수백 명의 한국 선교사 입국을 가능하게 한 결정적 도구가 됩니다.
+      </p>
+
+      <div class="era-sub-h">선교사 소개</div>
+      <div class="miss-cards">
+
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:var(--era-b)">1</div>
+            <div class="miss-card-title">
+              <div class="miss-name">김순일 · 김윤희 선교사 (2차 사역)</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">KIM 소속</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">아시아태평양 디렉터</span>
+              </div>
+              <div class="miss-period">1970. 3 재입국 — 방콕 (1970–1975)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">역할</div>
+              <div class="miss-fact-val">KIM 아시아태평양 지역 디렉터<br>방콕한인교회 최초 개척 (1971.1)</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">신홍식 목사 초청 후 교회 위임<br>풀러신학교 D.Miss. 취득 (1974)<br>LA 태국인 제일교회 개척 (1973)</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            1975년 신학 노선 차이로 귀국 후 동서선교개발연구원 사역 감당. 1971년 개척한 <strong>방콕한인교회</strong>는 현재까지 이어지는 태국 한인교회의 뿌리가 됩니다.
+          </p>
+        </div>
+
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:var(--era-b)">2</div>
+            <div class="miss-card-title">
+              <div class="miss-name">신홍식 · 이순영 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">KIM · 왕십리교회 후원</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">35년+ 장기 사역</span>
+              </div>
+              <div class="miss-period">1971. 7 입국 — 방콕 · 펫부리 · BIT (1971–은퇴)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">방콕한인교회 계승 사역<br>CCT 제6노회 지역 교회 순회<br>BIT(방콕국제신학교) 교수·부원장·원장 (~1999)</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">업적</div>
+              <div class="miss-fact-val">벌콥 조직신학 등 다수 번역 출간<br>WMP팀 통해 중부·남부 교회 개척<br>은퇴 후 바울의 집 선교특강 지속</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            1981년 귀국 후 태국으로 돌아와 BIT에서 1999년까지 신학 교육에 헌신. 태국 신학생 교육을 위해 조직신학 등 다수의 신학 서적을 직접 번역 출간했습니다.
+          </p>
+        </div>
+
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:var(--era-b)">3</div>
+            <div class="miss-card-title">
+              <div class="miss-name">김정웅 · 이순교 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">KIM · 합동 남서울교회 후원</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">35년+ 장기 사역</span>
+              </div>
+              <div class="miss-period">1976. 9 입국 — 람빵 · CCT 제4노회 (1976–은퇴)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">CCT 제4노회 산하 교회 순회<br>미얀마 국경 카렌족 교회 개척<br>EFT 이사·중앙이사 10여 년</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">특기 사항</div>
+              <div class="miss-fact-val">윤수길 선교사 태국 초청 및 사역 인계<br>KGM 전환 후 촌부리 센터 사역<br>목회자훈련원·고아원 등 다양한 사역</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            람빵을 중심으로 CCT 제4노회를 섬기며 미얀마 국경지대 카렌족에게 복음을 전하고 교회를 개척했습니다.
+            EFT 이사로 10여 년간 한국을 대표하여 태국복음주의연맹을 섬겼습니다.
+          </p>
+        </div>
+
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:#6c757d">4</div>
+            <div class="miss-card-title">
+              <div class="miss-name">임세종 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">월드컨선 파송</span>
+              </div>
+              <div class="miss-period">1978 입국 — 태국-캄보디아 국경 (1978–1980)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">사역 내용</div>
+              <div class="miss-fact-val">태국 내 캄보디아 난민 복음화<br>태국-캄보디아 국경 지역 사역</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">사역 기간</div>
+              <div class="miss-fact-val">2년 사역 후 1980년 귀국<br>한국인 최초 난민 선교 사역</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            월드컨선의 파송으로 폴포트 정권 이후 태국으로 피난 온 캄보디아 난민들에게 복음을 전한 한국 선교사.
+          </p>
+        </div>
+
+        <div class="miss-card">
+          <div class="miss-card-top">
+            <div class="miss-avatar-num" style="background:var(--era-a)">5</div>
+            <div class="miss-card-title">
+              <div class="miss-name">정승회 · 김영숙 선교사</div>
+              <div class="miss-badge-row">
+                <span class="miss-badge">KPM 설립자</span>
+                <span class="miss-badge" style="background:rgba(181,137,58,.12);color:var(--gold)">EFT 비자 쿼터 확보</span>
+              </div>
+              <div class="miss-period">1979. 12 입국 — 방콕 · 치앙라이 (1979–은퇴)</div>
+            </div>
+          </div>
+          <div class="miss-facts">
+            <div class="miss-fact">
+              <div class="miss-fact-key">핵심 업적</div>
+              <div class="miss-fact-val">KPM(한국장로교 선교부) 설립 (1980.10)<br>EFT 비자 쿼터 20개 확보<br>→ 이후 수백 명의 한국 선교사 입국 가능</div>
+            </div>
+            <div class="miss-fact">
+              <div class="miss-fact-key">주요 사역</div>
+              <div class="miss-fact-val">방콕 교회 개척<br>방콕목회대학원 설립 (1984)<br>치앙라이 장로교신학교 설립 (2003)<br>소수부족 선교 및 교회 지도자 양성</div>
+            </div>
+          </div>
+          <p class="miss-ministry">
+            태국복음주의연맹(EFT) 산하에서 <strong>비자 쿼터 20개를 확보</strong>한 것은 이 시기의 가장 중요한 제도적 기여입니다.
+            1984년 방콕목회대학원을 설립하여 태국 교회 지도자를 양성하고 교회 개척을 이끌었습니다.
+            2026년부터 미국에서 사와디 선교회를 통한 사역을 이어갈 계획입니다.
+          </p>
+        </div>
+
+      </div><!-- /miss-cards -->
+
+      <div class="era-sub-h">연대기</div>
+      <div class="era-tl">
+        <div class="era-tl-item">
+          <div class="era-tl-left">1970. 3</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">김순일 선교사 KIM 아태 디렉터로 재입국</div>
+            <div class="era-tl-body">싱가포르 비자 문제로 인해 이전 사역지인 태국으로 방향 전환.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1971. 1. 24</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">방콕한인교회 최초 설립</div>
+            <div class="era-tl-body">김순일 선교사가 방콕에 한인교회를 처음으로 설립. 이후 신홍식 선교사에게 위임.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1971. 7</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">신홍식·이순영 선교사 입국</div>
+            <div class="era-tl-body">KIM·왕십리교회 파송. 방콕한인교회 계승 및 태국어 습득 후 CCT 제6노회 사역.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1974</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">김순일 선교사, 풀러신학교 D.Miss. 취득</div>
+            <div class="era-tl-body">한국인 최초 선교학 박사. 같은 해 LA 태국인 제일교회 설립.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1976. 9</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">김정웅·이순교 선교사 입국</div>
+            <div class="era-tl-body">합동 남서울교회 후원, KIM 파송. 람빵 거점 CCT 제4노회 및 카렌족 선교.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1978</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">임세종 선교사 입국, 캄보디아 난민 사역</div>
+            <div class="era-tl-body">월드컨선 파송. 태국 내 캄보디아 난민 복음화. 2년 사역 후 귀국.</div>
+          </div>
+        </div>
+        <div class="era-tl-item">
+          <div class="era-tl-left">1979. 12</div>
+          <div class="era-tl-line"><div class="era-tl-dot" style="border-color:var(--era-b)"></div></div>
+          <div class="era-tl-right">
+            <div class="era-tl-title">정승회·김영숙 선교사 입국</div>
+            <div class="era-tl-body">EFT 산하 태국교회진흥원 초청. 이듬해 KPM 설립 및 EFT 비자 쿼터 20개 확보.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 3기: 1980–1989 ══ -->
+    <section class="era-section" id="era-c">
+      <div class="era-banner era-banner-c">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">3기 · 1980–1989</div>
+          <h2>선교 기반 형성 시기</h2>
+          <p>다양한 교단·단체 진입, 주태한인선교사회 결성</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">31</span>
+          <div class="era-big-label">유닛 · 55명</div>
+          <div class="era-big-sub">연평균 2.5유닛</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        1980년대는 한국교회 부흥의 절정기였습니다. 이와 함께 타문화권 선교에 대한 관심이 높아지며 외국의 선교단체들이 한국에 진입하고, 한국 자생 선교단체들도 일어나기 시작했습니다.
+        이 시기에 한국 선교사 31유닛 55명이 태국에 입국하여 합동·기성·개혁·통합·합신·기감 등 다양한 교단과 단체가 사역을 시작했습니다.
+        <strong>1987년 KGM 창설</strong>과 <strong>1988년 주태한인선교사회 결성</strong>이 이 시대의 대표적 결실입니다.
+      </p>
+
+      <div class="era-sub-h">주요 선교사 및 사역</div>
+      <div class="miss-table-wrap">
+        <table class="miss-table">
+          <thead>
+            <tr>
+              <th style="width:180px">선교사</th>
+              <th style="width:130px">소속/파송</th>
+              <th>주요 사역지 및 사역 내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="t-name">윤수길 · 한대희</div><div class="t-org">KIM → KGM</div></td>
+              <td class="t-loc">람빵</td>
+              <td class="t-desc">람빵 CCT 사역. 연구 안식년 후 2007.2 은퇴.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">양병화 · 김숙자</div><div class="t-org">KIM</div></td>
+              <td class="t-loc">치앙마이</td>
+              <td class="t-desc">맥켄병원 및 한센병 환자 후손 사역. 교회 개척 동역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">김중식 · 이애경</div><div class="t-org">KIM</div></td>
+              <td class="t-loc">나콘시탐마랏 (남부)</td>
+              <td class="t-desc">CCT 교회 순회. 신학교 사역 위주. 이후 KGM으로 전환.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">박선진 · 최정화</div><div class="t-org">KGM</div></td>
+              <td class="t-loc">프레 → 방콕</td>
+              <td class="t-desc">KGM 발족 후 방콕으로 이주. 캠퍼스 사역. 35년+ 장기 사역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">강대흥 · 황정신</div><div class="t-org">KGM → KGAM</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">한인교회 담임 후 이양. 1989.2 KGAM(CCT 협력 목회자훈련) 설립. 선교사 자녀 기숙사 「푸른초장」 설립 및 운영.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">정석천 · 신병연</div><div class="t-org">서문선교회 → 자립</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">방콕 호산나교회 개척. 방콕은혜국제학교(BGIS) 설립. 주일학교 사역 연구원 운영. 35년+ 장기 사역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">박윤식 · 여명순</div><div class="t-org">KIM → KGM</div></td>
+              <td class="t-loc">치앙마이 메아이</td>
+              <td class="t-desc">메아이 센타 마련. 기숙사·신학교를 통한 라후족 선교.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">황윤수 · 김영희</div><div class="t-org">개혁교단</div></td>
+              <td class="t-loc">방콕 → 치앙라이·치앙마이</td>
+              <td class="t-desc">방콕한인연합교회 담임 후 위임. 매짠·옴꺼이 산족 선교 시작. 이후 정도연·박문수 선교사에게 이양.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">김용식 · 허옥순</div><div class="t-org">합동 교단</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">방콕 한인연합교회 담임 목사. 35년+ 장기 사역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">조준형</div><div class="t-org">통합 · 새문안교회</div></td>
+              <td class="t-loc">방콕 → 치앙마이</td>
+              <td class="t-desc">파얍대학교 내 맥길버리신학교 선교학·전도학 강의. 람푼 센타 건축. 35년 사역 후 은퇴.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">김성곤</div><div class="t-org">서문교회 파송 → TMC</div></td>
+              <td class="t-loc">방콕 · 치앙라이</td>
+              <td class="t-desc">방콕 사랑의교회 개척. 신학교 사역·나환자 정착촌. 서문선교회 설립 → TMC(태국선교협의회)로 전환. 송용자·이양동·강효선·신철환·이철행 선교사와 동역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">박희성 · 김명순</div><div class="t-org">기성교단</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">므앙타이교회 협력. 반프라크릿교회 개척 동역. 단기(5년 이하) 사역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">홍성철</div><div class="t-org">기성교단</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">므앙타이교회 협력. 지도자 유학 지원. BBC 강의. 태국 전도의 필요를 각인.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">이용우 · 윤설주</div><div class="t-org">기성교단</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">므앙타이신학교 교장 대행. 므앙타이교회 협력 사역.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">이교욱 · 신재명</div><div class="t-org">ACTS</div></td>
+              <td class="t-loc">방콕 일대</td>
+              <td class="t-desc">KPM 비자 사용. 선교지 연구·교회 개척. 건강 악화로 10년 내 철수.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">장병조 · 이선옥</div><div class="t-org">바울선교회</div></td>
+              <td class="t-loc">태국 전역</td>
+              <td class="t-desc">KPM 비자 사용. 기독교방송 사역으로 복음 전파. 100개 교회 개척 목표.</td>
+            </tr>
+            <tr>
+              <td><div class="t-name">신광준 · 김은옥</div><div class="t-org">감리교</div></td>
+              <td class="t-loc">방콕</td>
+              <td class="t-desc">감리교 한인교회 개척·사역. 베트남·미얀마 이웃 사역 병행.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="era-sub-h">주요 사건 및 연대기</div>
+      <div class="key-events">
+        <div class="key-event">
+          <div class="key-event-year">1980. 10</div>
+          <div class="key-event-text"><strong>KPM 설립 및 EFT 비자 쿼터 20개 확보</strong> — 정승회 선교사 주도. 이후 수백 명 한국 선교사 입국의 핵심 통로.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1984</div>
+          <div class="key-event-text"><strong>방콕목회대학원 설립</strong> — 정승회 선교사. 태국 교회 지도자 양성 및 교회 개척의 산실.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1987</div>
+          <div class="key-event-text"><strong>KGM(한국지구촌선교회) 창설</strong> — KIM 소속 선교사들이 탈퇴하여 새 단체 설립. 이로써 KPM·KGAM·WMP·ANDM·UPM·TMC 등 자생 단체 다수 형성.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1988</div>
+          <div class="key-event-text"><strong>주태한인선교사회 최초 결성</strong> — 선교사 간 공식적인 교제·정보 교환·친목 도모의 시작. 현재 547가정 1,035명을 아우르는 조직의 출발점.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1989</div>
+          <div class="key-event-text"><strong>KGAM 설립 및 CCT 협력 목회자훈련 시작</strong> — 강대흥 선교사. 이후 선교사 자녀 기숙사 「푸른초장」 설립(1997).</div>
+        </div>
+      </div>
+
+      <div class="era-sub-h">진입 교단 및 선교단체</div>
+      <div class="org-wrap">
+        <span class="org-tag">합동(GMS)</span>
+        <span class="org-tag">기성(성결교)</span>
+        <span class="org-tag">개혁교단</span>
+        <span class="org-tag">통합교단</span>
+        <span class="org-tag">합신교단</span>
+        <span class="org-tag">기감(감리교)</span>
+        <span class="org-tag">ACTS</span>
+        <span class="org-tag">바울선교회</span>
+        <span class="org-tag">CCC</span>
+        <span class="org-tag">KIM</span>
+        <span class="org-tag">KGM</span>
+        <span class="org-tag">KPM</span>
+        <span class="org-tag">WMP</span>
+      </div>
+    </section>
+
+    <!-- ══ 4기: 1990–1999 ══ -->
+    <section class="era-section" id="era-d">
+      <div class="era-banner era-banner-d">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">4기 · 1990–1999</div>
+          <h2>폭발적 확장의 시기</h2>
+          <p>서울올림픽·선교한국 열기 속 급성장, 전국 확산</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">163</span>
+          <div class="era-big-label">유닛 · 265명</div>
+          <div class="era-big-sub">연평균 13.5유닛·22명</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        1988년 서울올림픽으로 높아진 한국의 국제적 위상, 그리고 선교한국 대회의 열기 속에서 한국교회의 타문화 선교 열정이 폭발했습니다.
+        이 시기 163유닛 265명이 태국에 입국하여 방콕을 넘어 치앙마이·콘깬·나콘시탐마랏 등 지방으로 흩어졌습니다.
+        1997~98년 IMF 금융위기에도 불구하고 입국자 수가 줄어들지 않은 것이 이 시대의 특징입니다.
+        1999년 서양 선교사 연합 자녀학교(GIS) 치앙마이 설립은 이후 북부 소수부족 선교의 물꼬를 텄습니다.
+      </p>
+
+      <div class="era-sub-h">연도별 입국 현황</div>
+      <div class="stat-year-grid">
+        <div class="stat-year-card"><div class="yr">1990</div><div class="unit">10</div><div class="person">유닛 · 17명</div></div>
+        <div class="stat-year-card"><div class="yr">1991</div><div class="unit">13</div><div class="person">유닛 · 20명</div></div>
+        <div class="stat-year-card"><div class="yr">1992</div><div class="unit">15</div><div class="person">유닛 · 25명</div></div>
+        <div class="stat-year-card"><div class="yr">1993</div><div class="unit">23</div><div class="person">유닛 · 36명</div></div>
+        <div class="stat-year-card"><div class="yr">1994</div><div class="unit">19</div><div class="person">유닛 · 29명</div></div>
+        <div class="stat-year-card"><div class="yr">1995</div><div class="unit">16</div><div class="person">유닛 · 30명</div></div>
+        <div class="stat-year-card"><div class="yr">1996</div><div class="unit">14</div><div class="person">유닛 · 23명</div></div>
+        <div class="stat-year-card"><div class="yr">1997</div><div class="unit">20</div><div class="person">유닛 · 32명</div></div>
+        <div class="stat-year-card"><div class="yr">1998</div><div class="unit">18</div><div class="person">유닛 · 30명</div></div>
+        <div class="stat-year-card"><div class="yr">1999</div><div class="unit">15</div><div class="person">유닛 · 23명</div></div>
+      </div>
+
+      <div class="era-sub-h">주요 사건</div>
+      <div class="key-events">
+        <div class="key-event">
+          <div class="key-event-year">1990년대</div>
+          <div class="key-event-text">방콕 집중에서 <strong>지방 분산 사역</strong>으로 전환. 치앙마이·콘깬·나콘시탐마랏 등지에 선교사 정착. 스포츠(축구) 선교 활성화.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1997–1998</div>
+          <div class="key-event-text"><strong>IMF 금융위기</strong> 기간에도 태국 입국 선교사 수 유지. 미주 한인교회 지원으로 어려움 극복.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1999. 5</div>
+          <div class="key-event-text"><strong>KGM+PWM → Global Partners(GP) 창설</strong>. 새로운 협력 선교 구조 시도.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">1999. 8</div>
+          <div class="key-event-text"><strong>GIS(선교사 자녀학교) 치앙마이 설립</strong> — 서양 선교단체 연합. 자녀 교육 문제 해결 → 북부 소수부족 선교 관심 급증의 계기.</div>
+        </div>
+      </div>
+
+      <div class="era-sub-h">새로 진입한 선교단체</div>
+      <div class="org-wrap">
+        <span class="org-tag">침례교(FMB)</span>
+        <span class="org-tag">ANDM</span>
+        <span class="org-tag">예성</span>
+        <span class="org-tag">합동보수</span>
+        <span class="org-tag">기감</span>
+        <span class="org-tag">브레드런</span>
+        <span class="org-tag">E-LAND 축구단</span>
+        <span class="org-tag">KOMF</span>
+        <span class="org-tag">고신</span>
+        <span class="org-tag">SIM</span>
+        <span class="org-tag">나사렛성결</span>
+        <span class="org-tag">UBF</span>
+        <span class="org-tag">YWAM</span>
+        <span class="org-tag">CEF</span>
+        <span class="org-tag">순복음</span>
+        <span class="org-tag">감리교</span>
+        <span class="org-tag">오순절</span>
+        <span class="org-tag">GMP</span>
+        <span class="org-tag">GP</span>
+        <span class="org-tag">통합</span>
+      </div>
+    </section>
+
+    <!-- ══ 5기: 2000–2009 ══ -->
+    <section class="era-section" id="era-e">
+      <div class="era-banner era-banner-e">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">5기 · 2000–2009</div>
+          <h2>부흥의 절정 시기</h2>
+          <p>한일월드컵 이후 최대 파송, 연합 집회 활성화</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">287</span>
+          <div class="era-big-label">유닛 · 492명</div>
+          <div class="era-big-sub">연평균 24유닛·41명</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        한일월드컵 4강(2002)과 한국 경제의 선진국 진입이 맞물리며 한국 선교사의 위상도 함께 높아진 시기입니다.
+        합동·개혁 교단 통합으로 선교사 숫자가 2,000명을 돌파했고, 새로운 교단과 단체들이 태국에 계속 진입했습니다.
+        대형 연합 집회(Rise Up Thailand·Holy City Thailand)가 시작되었고, 치앙마이를 중심으로 북부 소수부족 선교에 많은 선교사들이 집중했습니다.
+      </p>
+
+      <div class="era-sub-h">연도별 입국 현황</div>
+      <div class="stat-year-grid">
+        <div class="stat-year-card"><div class="yr">2000</div><div class="unit">20</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2001</div><div class="unit">31</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2002</div><div class="unit">34</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2003</div><div class="unit">15</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2004</div><div class="unit">23</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2005</div><div class="unit">33</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2006</div><div class="unit">34</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2007</div><div class="unit">24</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2008</div><div class="unit">41</div><div class="person">유닛</div></div>
+        <div class="stat-year-card"><div class="yr">2009</div><div class="unit">32</div><div class="person">유닛</div></div>
+      </div>
+
+      <div class="era-sub-h">주요 사건</div>
+      <div class="key-events">
+        <div class="key-event">
+          <div class="key-event-year">2005</div>
+          <div class="key-event-text"><strong>Rise Up Thailand</strong> — 이성희 선교사 주도. 청소년·대학생 대상 복음 집회. 현재도 다른 형태로 지속.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">2008</div>
+          <div class="key-event-text"><strong>Holy City Thailand</strong> — 김농원 선교사 주도. 매년 치앙마이에서 개최. 이후 전국으로 확산.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">2007–2009</div>
+          <div class="key-event-text"><strong>1세대 선교사 공식 은퇴</strong> — 윤수길·한대희(2007.2), 정승회·김영숙, 신홍식·이순영 선교사 등. 사역은 지속.</div>
+        </div>
+      </div>
+
+      <div class="era-sub-h">사역 중 하나님 품에 안긴 선교사</div>
+      <div class="memorial-grid">
+        <div class="memorial-card">
+          <div class="m-name">하을임 선교사</div>
+          <div class="m-date">2003년 12월</div>
+          <div class="m-cause">출산 후 암 투병</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">김근환 선교사</div>
+          <div class="m-date">2006년 11월</div>
+          <div class="m-cause">교육관 공사 중 낙상</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">고승희 선교사</div>
+          <div class="m-date">2007년 4월</div>
+          <div class="m-cause">심장마비</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">김준기 형제 (MK)</div>
+          <div class="m-date">2007년 7월</div>
+          <div class="m-cause">빗길 교통사고</div>
+        </div>
+      </div>
+
+      <div class="era-sub-h">새로 진입한 선교단체</div>
+      <div class="org-wrap">
+        <span class="org-tag">합신</span>
+        <span class="org-tag">백석</span>
+        <span class="org-tag">GNM</span>
+        <span class="org-tag">웨신</span>
+        <span class="org-tag">합동개혁</span>
+        <span class="org-tag">SIM</span>
+        <span class="org-tag">기장</span>
+      </div>
+    </section>
+
+    <!-- ══ 6기: 2010–2019 ══ -->
+    <section class="era-section" id="era-f">
+      <div class="era-banner era-banner-f">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">6기 · 2010–2019</div>
+          <h2>최다 파송의 시기</h2>
+          <p>평신도 하프타임 선교사 급증, 재배치 물결</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">353</span>
+          <div class="era-big-label">유닛 · 660명</div>
+          <div class="era-big-sub">연평균 29유닛·55명</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        한국교회가 성장의 절정을 넘어 하향세로 돌아섰지만, 선교의 열기는 아직 식지 않은 시기입니다.
+        평신도들이 은퇴 후 삶을 선교지에서 보내는 <strong>하프타임(Half-Time) 비전</strong>을 가진 평신도 선교사들이 눈에 띄게 늘었습니다.
+        또한 중국·인도 등에서 비자 문제로 비자발적 철수한 선교사 약 <strong>150유닛</strong>이 태국으로 재배치되어 유입되었습니다.
+        역대 최다 파송을 기록한 시기이나, 군소 교단 및 개인 단체 설립도 증가했습니다.
+      </p>
+
+      <div class="era-sub-h">연도별 입국 현황</div>
+      <div class="stat-year-grid">
+        <div class="stat-year-card"><div class="yr">2010</div><div class="unit">38</div><div class="person">유닛 · 72명</div></div>
+        <div class="stat-year-card"><div class="yr">2011</div><div class="unit">21</div><div class="person">유닛 · 39명</div></div>
+        <div class="stat-year-card"><div class="yr">2012</div><div class="unit">45</div><div class="person">유닛 · 85명</div></div>
+        <div class="stat-year-card"><div class="yr">2013</div><div class="unit">39</div><div class="person">유닛 · 72명</div></div>
+        <div class="stat-year-card"><div class="yr">2014</div><div class="unit">47</div><div class="person">유닛 · 85명</div></div>
+        <div class="stat-year-card"><div class="yr">2015</div><div class="unit">29</div><div class="person">유닛 · 55명</div></div>
+        <div class="stat-year-card"><div class="yr">2016</div><div class="unit">44</div><div class="person">유닛 · 84명</div></div>
+        <div class="stat-year-card"><div class="yr">2017</div><div class="unit">36</div><div class="person">유닛 · 66명</div></div>
+        <div class="stat-year-card"><div class="yr">2018</div><div class="unit">22</div><div class="person">유닛 · 42명</div></div>
+        <div class="stat-year-card"><div class="yr">2019</div><div class="unit">32</div><div class="person">유닛 · 60명</div></div>
+      </div>
+
+      <div class="era-sub-h">주요 사건</div>
+      <div class="key-events">
+        <div class="key-event">
+          <div class="key-event-year">2011. 5</div>
+          <div class="key-event-text"><strong>콩그레스 7.5 + Blessing Thailand + Love Sonata</strong> — 방콕에서 한국 온누리교회 주도. 태국교회 부흥 염원.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">2016</div>
+          <div class="key-event-text"><strong>한국인 태국 선교 60주년 기념</strong> — 방콕·치앙마이에서 포럼·세미나 개최. 지난 60년을 돌아보는 시간.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">2010년대</div>
+          <div class="key-event-text">중국·인도에서 비자발적 추방 선교사 <strong>약 150유닛 태국 재배치</strong>. 이들이 태국 선교 생태계에 큰 변화를 가져옴.</div>
+        </div>
+      </div>
+
+      <div class="era-sub-h">사역 중 하나님 품에 안긴 선교사</div>
+      <div class="memorial-grid">
+        <div class="memorial-card">
+          <div class="m-name">김지원 선교사 (실버)</div>
+          <div class="m-date">2013년 3월</div>
+          <div class="m-cause">교통사고</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">조금식 선교사</div>
+          <div class="m-date">2013년 4월</div>
+          <div class="m-cause">췌장암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">최봉일 선교사</div>
+          <div class="m-date">2013년 12월</div>
+          <div class="m-cause">담도암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">심미연 선교사</div>
+          <div class="m-date">2016년 6월</div>
+          <div class="m-cause">유방암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">이은영 선교사</div>
+          <div class="m-date">2017년</div>
+          <div class="m-cause">암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">박사라 선교사</div>
+          <div class="m-date">2019년 7월</div>
+          <div class="m-cause">피부암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">이재근 선교사</div>
+          <div class="m-date">2019년 9월</div>
+          <div class="m-cause">구강암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">공기원 선교사</div>
+          <div class="m-date">2019년 9월</div>
+          <div class="m-cause">뎅기열</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 7기: 2020–2026 ══ -->
+    <section class="era-section" id="era-g">
+      <div class="era-banner era-banner-g">
+        <div class="era-banner-body">
+          <div class="era-banner-tag">7기 · 2020–2026</div>
+          <h2>코로나 이후 현재</h2>
+          <p>팬데믹 충격, 급감과 새로운 선교 패러다임 모색</p>
+        </div>
+        <div class="era-banner-stat">
+          <span class="era-big-num">114</span>
+          <div class="era-big-label">유닛 · 209명</div>
+          <div class="era-big-sub">연평균 9유닛·17명</div>
+        </div>
+      </div>
+
+      <p class="era-overview">
+        코로나19가 3년간 통행을 막으며 선교에 큰 장애가 되었습니다. 매년 30유닛 가까이 입국하던 한국 선교사들이 2020년을 지나며 급감했고,
+        코로나 이후에는 연 14유닛에서 10유닛으로 더 떨어지며 어두운 전망을 드리우고 있습니다.
+        반면 CCT·EFT·TBC 세 기관의 연합이 강화되었고, <strong>2023년 콩그레스 9</strong>에서 5,000명이 모이며 태국교회의 힘을 보여주었습니다.
+        태국 정부의 비자 심사 강화, 중국인 유입 증가 등 선교 환경이 크게 변화하고 있습니다.
+      </p>
+
+      <div class="era-sub-h">연도별 입국 현황</div>
+      <div class="stat-year-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="stat-year-card"><div class="yr">2020</div><div class="unit">17</div><div class="person">유닛 · 32명</div></div>
+        <div class="stat-year-card"><div class="yr">2021</div><div class="unit">17</div><div class="person">유닛 · 32명</div></div>
+        <div class="stat-year-card"><div class="yr">2022</div><div class="unit">23</div><div class="person">유닛 · 41명</div></div>
+        <div class="stat-year-card"><div class="yr">2023</div><div class="unit">26</div><div class="person">유닛 · 50명</div></div>
+        <div class="stat-year-card"><div class="yr">2024</div><div class="unit">19</div><div class="person">유닛 · 32명</div></div>
+        <div class="stat-year-card"><div class="yr">2025</div><div class="unit">11</div><div class="person">유닛 · 18명</div></div>
+        <div class="stat-year-card"><div class="yr">2026</div><div class="unit">1</div><div class="person">유닛 · 2명</div></div>
+      </div>
+
+      <div class="era-sub-h">주요 사건</div>
+      <div class="key-events">
+        <div class="key-event">
+          <div class="key-event-year">2020–2022</div>
+          <div class="key-event-text"><strong>코로나19</strong> — 다수 선교사 본국 귀국. 특히 후원이 열악한 초교파 단체 선교사들의 귀국 가속.</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">2023. 5</div>
+          <div class="key-event-text"><strong>콩그레스 9</strong> — 치앙마이 컨벤션센터. 태국교회 주도, 5,000명 참여. 마지막 날 <strong>Love Thailand 111운동</strong> 선포 (2028년까지 백만 기독인·1만 지도자·1만 교회 목표).</div>
+        </div>
+        <div class="key-event">
+          <div class="key-event-year">현재</div>
+          <div class="key-event-text">태국 정부의 <strong>법인비자 심사 강화</strong>. 중국인 유입 증가로 태국 내 중국인 대상 사역 전환 사례 증가. 새로운 선교 패러다임 모색 중.</div>
+        </div>
+      </div>
+
+      <div class="era-sub-h">사역 중 하나님 품에 안긴 선교사</div>
+      <div class="memorial-grid">
+        <div class="memorial-card">
+          <div class="m-name">조한나 선교사</div>
+          <div class="m-date">2020년 1월</div>
+          <div class="m-cause">만취 차량 교통사고</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">임미순 선교사</div>
+          <div class="m-date">2020년 2월</div>
+          <div class="m-cause">암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">홍정훈 선교사</div>
+          <div class="m-date">2020년 9월</div>
+          <div class="m-cause">감전 사고</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">명재영 선교사</div>
+          <div class="m-date">2020년 11월</div>
+          <div class="m-cause">신장암</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">이종만 선교사</div>
+          <div class="m-date">2021년 5월</div>
+          <div class="m-cause">심장마비</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">김성일 선교사</div>
+          <div class="m-date">2021년 9월</div>
+          <div class="m-cause">코로나19</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">차대영 선교사</div>
+          <div class="m-date">2022년 3월</div>
+          <div class="m-cause">뇌출혈</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">고용훈 선교사</div>
+          <div class="m-date">2022년 11월</div>
+          <div class="m-cause">심장마비</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">김치겸 선교사</div>
+          <div class="m-date">2023년 1월</div>
+          <div class="m-cause">급성 동맥 파열</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">김춘선 선교사 (YWAM)</div>
+          <div class="m-date">2024년 7월</div>
+          <div class="m-cause">암 투병</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">방삼열 선교사</div>
+          <div class="m-date">2024년 10월</div>
+          <div class="m-cause">심장 질환</div>
+        </div>
+        <div class="memorial-card">
+          <div class="m-name">오상곤 선교사</div>
+          <div class="m-date">2024년 10월</div>
+          <div class="m-cause">질병</div>
+        </div>
+        <div class="memorial-card" style="border-color:rgba(181,137,58,.4)">
+          <div class="m-name">배정희 선교사</div>
+          <div class="m-date">2025년 6월</div>
+          <div class="m-cause">급성 뇌종양</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 70년 종합 통계 ══ -->
+    <section class="summary-section" id="summary">
+      <h2>70년 종합 통계</h2>
+      <p class="s-sub">1956–2026 · 권삼승 선교사 연구 · 태국주재한인선교사회</p>
+      <div class="sum-grid">
+        <div class="sum-card">
+          <div class="sum-big">953<span style="font-size:1.4rem">유닛</span></div>
+          <div class="sum-mid">약 1,700명</div>
+          <div class="sum-label">70년간 태국 파송<br>한국인 선교사 총수<br><span style="font-size:.75rem;opacity:.5">부부 738유닛 · 싱글 215명</span></div>
+        </div>
+        <div class="sum-card">
+          <div class="sum-big">30</div>
+          <div class="sum-mid">방콕 13 · 치앙마이 6 · 치앙라이 3 · 파타야·라용 5 · 기타 3</div>
+          <div class="sum-label">한국인 선교사가 개척한<br>한인교회 수<br><span style="font-size:.75rem;opacity:.5">1971년 방콕한인교회를 시작으로</span></div>
+        </div>
+        <div class="sum-card">
+          <div class="sum-big">26</div>
+          <div class="sum-mid">남자 17명 · 여자 9명</div>
+          <div class="sum-label">사역 중 하나님 품에<br>안긴 선교사 수<br><span style="font-size:.75rem;opacity:.5">암 10 · 심장마비 5 · 사고 5 · 기타</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- /hist-layout -->
+
+<!-- 푸터 -->
+<footer>
+  <div class="footer-title">태국 한인 선교 70주년 기념 — 1956 · 2026</div>
+  <div>
+    자료 출처: 권삼승 선교사 강의 「한국인의 태국 선교 70주년을 돌아보며」 · 태국주재한인선교사회<br>
+    <a href="index.html">← 메인 페이지로 돌아가기</a>
+  </div>
+  <div class="footer-credit">제작 : 목회 AI 연구소</div>
+</footer>
+
+<script>
+function setActive(el) {
+  document.querySelectorAll('.sn-item').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// 스크롤 위치에 따라 사이드바 자동 하이라이트
+const sections = ['era-a','era-b','era-c','era-d','era-e','era-f','era-g','summary'];
+const navItems = document.querySelectorAll('.sn-item');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === '#' + id) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+</script>
+</body>
+</html>
